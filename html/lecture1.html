@@ -1,1 +1,218 @@
+<!-- introduction -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Tags Examples</title>
+</head>
+<body>
+    <!-- Headings -->
+    <!-- <h1> to <h6> are used to define headings, where <h1> is the highest level and <h6> is the lowest -->
+    <h1>This is an H1 heading</h1>
+    <h2>This is an H2 heading</h2>
+    <h3>This is an H3 heading</h3>
+    <h4>This is an H4 heading</h4>
+    <h5>This is an H5 heading</h5>
+    <h6>This is an H6 heading</h6>
 
+
+    <!-- different tags -->
+    <!-- Paragraph -->
+    <!-- <p> is used to define a paragraph -->
+    <p>This is a paragraph of text.</p>
+
+    <!-- Anchor -->
+    <!-- <a> is used to create a hyperlink -->
+        <a href="https://www.google.com">click this button to redirect</a>
+        <a href="https://www.google.com" target="_blank" >click this button to redirect but to new page</a>
+
+    <!-- Image -->
+    <!-- <img> is used to embed an image -->
+    <img src="https://www.cyberark.com/wp-content/uploads/2019/11/Developer.jpg" alt="Example Image">
+
+    <!-- Lists -->
+    <!-- <ul> defines an unordered list, <ol> defines an ordered list -->
+    <ul>
+        <li>Unordered list item 1</li>
+        <li>Unordered list item 2</li>
+    </ul>
+    <ol>
+        <li>Ordered list item 1</li>
+        <li>Ordered list item 2</li>
+    </ol>
+
+    <!-- Division -->
+    <!-- <div> is a block-level element used for grouping content -->
+    <div style="background-color: lightgrey;">This is a div element.</div>
+
+    <!-- Span -->
+    <!-- <span> is an inline element used for grouping content -->
+    <p>This is a <span style="color: blue;">span element</span> inside a paragraph.</p>
+
+    <!-- Break -->
+    <!-- <br> is used to insert a line break -->
+    <p>This is text before the break.<br>This is text after the break.</p>
+
+    <!-- Horizontal Rule -->
+    <!-- <hr> is used to insert a horizontal line -->
+    <p>Text above the horizontal rule.</p>
+    <hr>
+    <p>Text below the horizontal rule.</p>
+
+    <!-- Strong and Emphasis -->
+    <!-- <strong> makes text bold, <em> makes text italic -->
+    <p>This text is <strong>strong</strong> and this text is <em>emphasized</em>.</p>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Block and Inline Elements</title>
+</head>
+<body>
+    <!-- Block Element -->
+    <!-- <div> is a block-level element and takes up the full width available -->
+    <div style="background-color: lightblue; padding: 10px;">This is a block element (div).</div>
+
+    <!-- Inline Elements -->
+    <!-- <a> and <span> are inline elements, taking up only as much width as necessary -->
+    <p>This is a paragraph with an <a href="#">inline link</a> and an <span style="color: red;">inline span</span>.</p>
+</body>
+</html>
+
+
+<!-- <div> is a block-level element and starts on a new line, taking up the full width available. It is used to group block elements.
+<span> is an inline element and does not start on a new line, taking up only as much width as necessary. It is used to group inline elements. -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table Example</title>
+</head>
+<body>
+    <!-- Table -->
+    <!-- <table> is used to create a table, <tr> for rows, <td> for cells, <th> for header cells -->
+    <table border="1">
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inputs and Forms Example</title>
+  </head>
+  <body>
+    <!-- Text Input -->
+    <!-- <input type="text"> is used to create a text input field -->
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+    </form>
+
+    <!-- Email Input -->
+    <!-- <input type="email"> is used to create an email input field -->
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+    </form>
+
+    <!-- Password Input -->
+    <!-- <input type="password"> is used to create a password input field -->
+    <form>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
+    </form>
+
+    <!-- Radio Buttons -->
+    <!-- <input type="radio"> is used to create a radio button -->
+    <form>
+      <input type="radio" id="option1" name="options" value="1" />
+      <label for="option1">Option 1</label><br />
+      <input type="radio" id="option2" name="options" value="2" />
+      <label for="option2">Option 2</label>
+    </form>
+
+    <!-- Checkboxes -->
+    <!-- <input type="checkbox"> is used to create a checkbox -->
+    <form>
+      <input type="checkbox" id="checkbox1" name="checkbox" value="1" />
+      <label for="checkbox1">Checkbox 1</label><br />
+      <input type="checkbox" id="checkbox2" name="checkbox" value="2" />
+      <label for="checkbox2">Checkbox 2</label>
+    </form>
+
+    <!-- Textarea -->
+    <!-- <textarea> is used to create a multi-line text input field -->
+    <form>
+      <label for="comments">Comments:</label><br />
+      <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+    </form>
+
+
+    
+
+    <!-- Select Dropdown -->
+    <!-- <select> is used to create a dropdown list -->
+
+    <br />
+    <br />
+    <form>
+      <label for="dropdown">Choose an option:</label>
+      <select id="dropdown" name="dropdown">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">gfgfg</option>
+        <option value="4">fdfd 2</option>
+        <option value="5">fdfdf 2</option>
+      </select>
+    </form>
+    <br />
+    <br />
+    <!-- Button -->
+    <!-- <button> is used to create a clickable button -->
+    <form>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- File Input -->
+    <!-- <input type="file"> is used to upload files -->
+    <form>
+      <label for="file">Upload a file:</label>
+      <input type="file" id="file" name="file" />
+    </form>
+
+    <!-- Date Input -->
+    <!-- <input type="date"> is used to select a date -->
+    <form>
+      <label for="date">Choose a date:</label>
+      <input type="date" id="date" name="date" />
+    </form>
+  </body>
+</html>
