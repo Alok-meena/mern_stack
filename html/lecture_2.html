@@ -149,3 +149,770 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+now html with css
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- this is external css-->
+    <style>
+        .button-rounded {
+            background-color: #0fa0d1;
+            cursor: pointer;
+            color: white;
+            font-size: 46px;
+            padding:30px 20px 1 1px 20px;
+            text-align:justify;
+            text-decoration:none;
+            margin:4vh 4%;
+            height:60px;
+            width: 150px;
+            /* box-shadow: 20px 20px 50px 10px pink inset; */
+            box-shadow: 10px 5px grey; 
+       }
+
+        .button{
+            color: red;
+            background-color: yellow;
+            font-size: 46px;
+            padding: 4px 4px;
+            border-radius: 12px;/*to do the border curve*/
+            border-color:red;
+            border-style:solid;
+            border-width: 3px ;
+            border-top:2px solid blue;
+            border-right: 2px solid orange;
+            border-bottom: 2px solid black;
+            border-left: 4px solid pink;
+           /* border: none; it will remove if any border exist*/
+        }
+        .hello{
+            border-color: #0fa0d1;
+            color: red;
+            border-radius: 400;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="button-rounded">Button</button>
+    <button class="button">Button2</button>
+    <br><br><br>
+    <span class="hello">child1 child2 child3</span>
+</body>
+
+</html>
+
+
+
+sir code for button 
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Styling Examples</title>
+    <style>
+      /* Button Designs */
+      .button-basic {
+        background-color: #4caf50; /* Green */
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .button-rounded {
+        background-color: #008cba;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .button-outline {
+        background-color: transparent;
+        color: black;
+        border: 2px solid black;
+        padding: 10px 20px;
+      }
+
+      .button-glow {
+        background-color: #555555;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        box-shadow: 0 0 8px #ffd700;
+      }
+
+      .button-3d {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+
+      /* Border Designs */
+      .border-dotted {
+        border: 4px dotted red;
+        padding: 10px;
+      }
+
+      .border-dashed {
+        border: 3px dashed green;
+        padding: 10px;
+      }
+
+      .border-double {
+        border: 8px double blue;
+        padding: 10px;
+      }
+
+      .border-groove {
+        border: 6px groove violet;
+        padding: 10px;
+      }
+
+      .border-inset {
+        border: 6px inset grey;
+        padding: 10px;
+      }
+
+      .border-outset {
+        border: 6px outset orange;
+        padding: 10px;
+      }
+
+      .border-ridge {
+        border: 6px ridge brown;
+        padding: 10px;
+      }
+
+      .border-round {
+        border: 5px solid red;
+        border-radius: 15px;
+        padding: 10px;
+      }
+
+      .border-thick {
+        border: 10px solid black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Button Designs</h2>
+    <button class="button-basic">Basic Button</button>
+    <button class="button-rounded">Rounded Button</button>
+    <button class="button-outline">Outline Button</button>
+    <button class="button-glow">Glow Button</button>
+    <button class="button-3d">3D Button</button>
+
+    <h2>Border Designs</h2>
+    <div class="border-dotted">Dotted Border</div>
+    <div class="border-dashed">Dashed Border</div>
+    <div class="border-double">Double Border</div>
+    <div class="border-groove">Groove Border</div>
+    <div class="border-inset">Inset Border</div>
+    <div class="border-outset">Outset Border</div>
+    <div class="border-ridge">Ridge Border</div>
+    <div class="border-round">Rounded Border</div>
+    <div class="border-thick">Thick Border</div>
+  </body>
+</html>
+
+
+
+id vs class
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rounded{
+            border-radius: 10px;
+            width: 200px;
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+        #specialDiv{
+            font-weight: bold;
+            color: red;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="rounded" id="specialDiv">
+        This div uses both and Id and a class.
+    </div>
+    <div class="rounded">This div uses just a class </div>
+</body>
+</html>
+
+
+
+inline css within the body
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="border: 1px solid black">This div has a border.</div>
+    <p style="color: red">This text is red.</p>
+    <div style="background-color: lightblue">
+      This div has a light blue background.
+    </div>
+
+    <span style="font-size: 24px">This text is 24 pixels in size.</span>
+    <p style="font-family: Arial">This text uses the Arial font.</p>
+    <div style="text-align: center">This text is centered.</div>
+
+    <div style="margin: 20px">This div has a margin of 20px.</div>
+    <div style="padding: 10px">This div has padding of 10px.</div>
+    <div style="width: 200px">This div is 200px wide.</div>
+    <div style="height: 100px">This div is 100px tall.</div>
+    <div style="display: none">You cannot see this div.</div>
+    <div style="border-radius: 10px; width: 200px; background-color: lightblue">
+      This div has rounded corners.
+    </div>
+
+    <div style="opacity: 0.5">This div is semi-transparent.</div>
+    <div style="box-shadow: 2px 2px 5px grey">This div has a shadow.</div>
+    <span style="text-shadow: 2px 2px 2px grey">This text has a shadow.</span>
+  </body>
+</html>
+
+
+
+precedence between selectors
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Precedence Example</title>
+    <style>
+      /* Type selector */
+      p {
+        color: red; /* This will be overridden by class and ID selectors if applied */
+      }
+      /* Class selector */
+      .special {
+        color: blue; /* This will be overridden by the ID selector */
+      }
+      /* ID selector */
+      #unique {
+        color: green; /* This has the highest specificity */
+      }
+      /* Inline style example */
+      .inline {
+        color: black; /* This is an example of an inline style 
+          to dekho niche inline css ki priority high hai so color purple nhi hoga 
+          because ye to class selector hai*/
+      }
+    </style>
+  </head>
+  <body>
+    <p>This paragraph is red by default (type selector).</p>
+    <p class="special">This paragraph is blue (class selector).</p>
+    <p id="unique">This paragraph is green (ID selector).</p>
+    <p id="unique" class="special"><!-- to iska color green ho jayega because 
+        id selector priority is more than class selector-->
+      This paragraph is green (ID selector takes precedence).
+    </p>
+    <p class="inline" style="color: orange">
+      This paragraph is orange (inline style).
+    </p>
+  </body>
+</html>
+
+
+
+PSEUDO SELECTORS/CLASSES:-
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:hover{
+            color: red;
+        }
+        a:visited{
+            color: brown;
+        }
+        a:active{
+            color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="#tree">Hover over this  link</a>
+</body>
+</html>
+
+
+combinators....
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*descendent combinator*/
+
+        div p {
+        color: blue;
+        
+        }
+
+        
+        .hello p{/* mtlb div class ke ander p ko color kr do red*/
+            color: red;
+        }
+
+        /* Child combinator - targets direct <p> children of <div> */
+
+        div > p {
+        color: green;
+        }
+
+        /*Next-sibling combinator
+        
+         It matches only those elements matched by the second selector that are the next sibling element of the first selector. */
+
+
+         /*or it is:--- Adjacent sibling combinator - targets <p> immediately following <h1> */
+
+
+        h1+p{/* to h1 ke just next sibling ko color kr denge jo pahla p hai*/
+            color: brown;
+        }
+
+
+         /* General sibling combinator - targets all <p> siblings of <h1> */
+
+        h1~p{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heading</h1>
+    <p>Paragraph next to heading</p>
+    <p>Another paragraph</p>
+    <div class="hello">
+        <p>Paragraph inside div
+            <p>para under div then under p </p>
+        </p>
+        <p>Another paragraph inside div</p>
+    </div>
+</body>
+</html>
+
+MORE ABOUT COMBINATORES:----
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Combinators Example</title>
+    <style>
+      /* Descendant combinator (space) */
+      /* Selects all .item elements that are descendants of any .container element */
+      .container .item {
+        color: blue;
+        margin: 10px;
+      }
+
+      /* Child combinator (>) */
+      /* Selects all .child elements that are direct children of any .parent element */
+      .parent > .child {
+        border: 2px solid green;
+      }
+
+      /* Adjacent sibling combinator (+) */
+      /* Selects the first .next immediately after each .previous */
+      .previous + .next {
+        background-color: yellow;
+      }
+
+      /* General sibling combinator (~) */
+      /* Selects all .following elements that share the same parent and follow after .preceding */
+      .preceding ~ .following {
+        padding: 5px;
+        border: 1px dashed red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Item 1 (Descendant of container)</div>
+      <div class="item">Item 2 (Descendant of container)</div>
+    </div>
+    <div class="parent">
+      <div class="child">Child 1 (Direct child of parent)</div>
+      <div class="child">Child 2 (Direct child of parent)</div>
+    </div>
+    <div class="parent">
+      <div>Non-targeted Element</div>
+      <!-- Not selected by any combinator -->
+      <div class="child">Child 3 (Direct child of another parent)</div>
+    </div>
+    <div class="previous">Previous Element</div>
+    <div class="next">Next Element (Adjacent to previous)</div>
+    <div class="preceding">Preceding Element</div>
+    <div class="following">Following Element 1 (General sibling)</div>
+  </body>
+</html>
+
+types of selectors :- 4 type
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Selectors and Properties Example</title>
+    <style>
+      /* Type selector - styles all <p> elements */
+      p {
+        font-size: 16px;
+        color: red;
+      }
+      /* Class selector - styles elements with the class "classSelector" */
+      .classSelector {
+        color: blue;
+        font-weight: bold;
+      }
+      /* ID selector - styles the element with the ID "idSelector" */
+      #idSelector {
+        background-color: yellow;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This paragraph uses the type selector.</p>
+    <p class="classSelector">This paragraph uses the class selector.</p>
+    <p id="idSelector">This paragraph uses the ID selector.</p>
+  </body>
+</html>
+
+
+TRANSFORM AND SKEW PROPERTIES AND MANY MORE
+1).
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skew Transformations Example</title>
+    <style>
+      /* Base style for all boxes */
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        display: inline-block;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 100px;
+        text-align: center;
+      }
+
+      /* Skew transformation along the X-axis */
+      .skewX {
+        background-color: red;
+        transform: skewX(
+          20deg
+        ); /* Tilts the element by 20 degrees along the X-axis */
+      }
+
+      /* Skew transformation along the Y-axis */
+      .skewY {
+        background-color: blue;
+        transform: skewY(
+          20deg
+        ); /* Tilts the element by 20 degrees along the Y-axis */
+      }
+
+      /* Combined skew transformations along both X and Y axes */
+      .skewXY {
+        background-color: green;
+        transform: skewX(20deg) skewY(20deg); /* Applies both transformations */
+      }
+
+      /* Skew transformation in opposite directions on X and Y axes */
+      .skewOpposite {
+        background-color: purple;
+        transform: skewX(20deg) skewY(-20deg); /* X axis skews 20deg right, Y axis 20deg left */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box skewX">Skew X</div>
+    <div class="box skewY">Skew Y</div>
+    <div class="box skewXY">Skew XY</div>
+    <div class="box skewOpposite">Skew Opposite</div>
+  </body>
+</html>
+
+2).
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Transform Examples</title>
+    <style>
+      /* Base style for all squares */
+      .square {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        display: inline-block;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 100px;
+        text-align: center;
+        transition: transform 0.5s; /* Smooth transition for transform effects */
+      }
+
+      /* Rotate transformation */
+      .rotate {
+        background-color: teal;
+        transform: rotate(45deg); /* Rotates the element 45 degrees clockwise */
+      }
+
+      /* Scale transformation */
+      .scale {
+        background-color: tomato;
+        transform: scale(1.5); /* Increases the size by 50% */
+      }
+
+      /* Combined rotate and scale transformations */
+      .rotate-scale {
+        background-color: slateblue;
+        transform: rotate(30deg) scale(0.8); /* Rotates 30 degrees and scales down to 80% */
+      }
+
+      /* Skew and rotate transformation */
+      .skew-rotate {
+        background-color: seagreen;
+        transform: skewX(20deg) rotate(-30deg); /* Skews X-axis by 20 degrees and rotates -30 degrees */
+      }
+
+      /* Complex transformation: rotate, scale, and translate */
+      .complex {
+        background-color: sienna;
+        transform: rotate(10deg) scale(1.2) translate(30px, 20px); /* Combines rotation, scaling, and moving */
+      }
+
+      /* RotateX transformation */
+      .rotateX {
+        background-color: pink;
+        transform: rotateX(
+          45deg
+        ); /* Rotates the element 45 degrees around the X-axis */
+      }
+
+      /* RotateY transformation */
+      .rotateY {
+        background-color: pink;
+        transform: rotateY(
+          45deg
+        ); /* Rotates the element 45 degrees around the Y-axis */
+      }
+
+      /* Combined rotateX and rotateY transformations */
+      .rotateXY {
+        background-color: pink;
+        transform: rotateX(30deg) rotateY(30deg); /* Rotates 30 degrees around both the X and Y axes */
+      }
+
+      /* RotateX, RotateY, and Scale transformation */
+      .complex-3d {
+        background-color: pink;
+        transform: rotateX(15deg) rotateY(15deg) scale(1.3); /* Combines rotation on X and Y with scaling */
+      }
+
+      /* Rotate, RotateX, RotateY, and Translate */
+      .full-3d {
+        background-color: pink;
+        transform: rotate(10deg) rotateX(20deg) rotateY(30deg)
+          translate(20px, 10px); /* 
+          aor kah skte hai ki position se move kr deta hai ye
+          Full 3D rotation and translation */
+      }
+
+      /* mtlb jab uspe point kroge to corresponding property ke sath rotate krega
+      Hover effect to further rotate element on mouse over */
+      .square:hover {
+        transform: rotateX(180deg) rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="square rotate">Rotate</div><!-- to pahli class me square sbka 
+    khuch properties dal di aor baki gap ke bad jo use krenge 
+for individual properties-->
+    <div class="square scale">Scale</div>
+    <div class="square rotate-scale">Rotate Scale</div>
+    <div class="square skew-rotate">Skew Rotate</div>
+    <div class="square complex">Complex</div>
+
+    <div class="square rotateX">RotateX</div>
+    <div class="square rotateY">RotateY</div>
+    <div class="square rotateXY">RotateXY</div>
+    <div class="square complex-3d">Complex 3D</div>
+    <div class="square full-3d">Full 3D</div>
+  </body>
+</html>
+
+also grouping selector
+
+SIR SITE 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stylish Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Welcome to My Stylish Page</h1>
+    </div>
+    <div class="content">
+      <button class="btn">Click Me!</button>
+      <button class="btn special">Me Too</button>
+    </div>
+    <div id="amazingEffect">
+      <p>Hover over me!</p>
+    </div>
+  </body>
+</html>
+
+/* Basic styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+}
+
+#header {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    margin: 20px;
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #0084ff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn.special {
+    background-color: #ff0078;
+    transition: transform 0.2s ease-out; /* Smooth transition for hover effects */
+}
+.btn.special:hover {
+    transform: rotate(3600deg) scale(10); /* Rotates and scales on hover */
+    transition: transform 5s ease-out; /* Transition for smooth effect */
+}
+
+/* Enhanced Amazing CSS effect with bounce */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+#amazingEffect {
+    margin: 50px auto;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.5s ease;
+    animation: bounce 2s infinite;
+}
+
+#amazingEffect:hover {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+    animation: none; 
+}
