@@ -21,6 +21,172 @@ https://boxicons.com/ use this to include any social media symbols
 </html>
 
 
+Types of dispaly:------
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Types Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Display Types Demo</h1>
+
+    <!-- Inline Display -->
+    <section>
+      <h2>Inline Display</h2>
+      <p>
+        This is an <span class="inline">inline</span> element within a
+        paragraph.
+      </p>
+    </section>
+
+    <!-- Block Display -->
+    <section>
+      <h2>Block Display</h2>
+      <div class="block">This is a block element.</div>
+      <div class="block">Another block element.</div>
+    </section>
+
+    <!-- Inline-Block Display -->
+    <section>
+      <h2>Inline-Block Display</h2>
+      <div class="inline-block">This is an inline-block element.</div>
+      <div class="inline-block">Another inline-block element.</div>
+    </section>
+
+    <!-- Flex Display -->
+    <section>
+      <h2>Flex Display</h2>
+      <div class="flex-container">
+        <div class="flex-item">Flex Item 1</div>
+        <div class="flex-item">Flex Item 2</div>
+        <div class="flex-item">Flex Item 3</div>
+      </div>
+    </section>
+
+    <!-- Grid Display -->
+    <section>
+      <h2>Grid Display</h2>
+      <div class="grid-container">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+        <div class="grid-item">Grid Item 4</div>
+      </div>
+    </section>
+
+    <!-- Justify Display -->
+    <section>
+      <h2>Justify Content (Flex)</h2>
+      <div class="justify-container">
+        <div class="justify-item">Justify Item 1</div>
+        <div class="justify-item">Justify Item 2</div>
+        <div class="justify-item">Justify Item 3</div>
+      </div>
+    </section>
+  </body>
+</html>
+
+it's corresponding css file
+
+/* Sets the basic styling for the body */
+body {
+    font-family: Arial, sans-serif;  /* Sets the font to Arial with sans-serif fallback */
+    line-height: 1.6;  /* Sets the line height to 1.6 times the font size for better readability */
+    margin: 0;  /* Removes the default margin */
+    padding: 20px;  /* Adds padding of 20px around the content */
+}
+
+/* Styles for the main heading (h1) */
+h1 {
+    text-align: center;  /* Centers the text */
+    margin-bottom: 40px;  /* Adds a margin below the heading */
+}
+
+/* General styling for sections */
+section {
+    margin-bottom: 40px;  /* Adds a margin below each section */
+}
+
+/* Styles for inline elements */
+.inline {
+    display: inline;  /* Sets the display property to inline */
+    background-color: lightblue;  /* Sets the background color */
+    padding: 5px;  /* Adds padding inside the element */
+    margin: 5px;  /* Adds margin around the element */
+}
+
+/* Styles for block elements */
+.block {
+    display: block;  /* Sets the display property to block */
+    background-color: lightgreen;  /* Sets the background color */
+    padding: 10px;  /* Adds padding inside the element */
+    margin: 10px 0;  /* Adds a vertical margin of 10px above and below the element */
+}
+
+/* Styles for inline-block elements */
+.inline-block {
+    display: inline-block;  /* Sets the display property to inline-block */
+    background-color: lightcoral;  /* Sets the background color */
+    padding: 10px;  /* Adds padding inside the element */
+    margin: 10px;  /* Adds margin around the element */
+    width: 100px;  /* Sets a fixed width */
+    text-align: center;  /* Centers the text inside the element */
+}
+
+/* Styles for flex container */
+.flex-container {
+    display: flex;  /* Sets the display property to flex */
+    background-color: lightgoldenrodyellow;  /* Sets the background color */
+    padding: 10px;  /* Adds padding inside the container */
+}
+
+/* Styles for flex items */
+.flex-item {
+    background-color: lightpink;  /* Sets the background color */
+    margin: 10px;  /* Adds margin around the item */
+    padding: 20px;  /* Adds padding inside the item */
+    flex: 1;  /* Allows the item to grow and shrink as needed */
+    text-align: center;  /* Centers the text inside the item */
+}
+
+/* Styles for grid container */
+.grid-container {
+    display: grid;  /* Sets the display property to grid */
+    grid-template-columns: auto auto;  /* Defines a two-column layout */
+    gap: 10px;  /* Sets the gap between grid items */
+    background-color: lightgray;  /* Sets the background color */
+    padding: 10px;  /* Adds padding inside the container */
+}
+
+/* Styles for grid items */
+.grid-item {
+    background-color: lightseagreen;  /* Sets the background color */
+    padding: 20px;  /* Adds padding inside the item */
+    text-align: center;  /* Centers the text inside the item */
+}
+
+/* Styles for justify content container */
+.justify-container {
+    display: flex;  /* Sets the display property to flex */
+    justify-content: space-between;  /* Distributes items evenly with space between */
+    background-color: lightsteelblue;  /* Sets the background color */
+    padding: 10px;  /* Adds padding inside the container */
+}
+
+/* Styles for justify content items */
+.justify-item {
+    background-color: lightcoral;  /* Sets the background color */
+    margin: 10px;  /* Adds margin around the item */
+    padding: 20px;  /* Adds padding inside the item */
+    text-align: center;  /* Centers the text inside the item */
+}
+
+
 
 GRID in display
 
@@ -77,8 +243,443 @@ GRID in display
 
 flex-box
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        /* flex-direction: row; */
+        /* flex-direction: column-reverse; The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines*/
+        /* flex-direction: row-reverse; */
+        /* flex-wrap: wrap; */
+        /* flex-wrap: nowrap; */
+        background-color: DodgerBlue;
+      }
+
+      .flex-container > div {
+        background-color: #f1f1f1;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The flex-direction Property</h1>
+
+    <div class="flex-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </div>
+  </body>
+</html>
+
+z index and positions:---
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Position and Z-Index Demonstration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .box {
+        padding: 20px;
+        margin: 20px;
+        background-color: #4caf50;
+        color: white;
+        border: 2px solid #388e3c;
+        text-align: center;
+        font-size: 1.2em;
+      }
+      /* Static Position */
+      .static {
+        position: static; /* Default positioning */
+      }
+      /* Fixed Position */
+      .fixed {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background-color: #ff5722;
+      }
+      /* Absolute Position */
+      .absolute-container {
+        position: relative;
+        height: 150px; /* Container height for absolute positioning */
+      }
+      .absolute {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #2196f3;
+      }
+      /* Relative Position */
+      .relative {
+        position: relative;
+        top: 10px;
+        left: 10px;
+        background-color: #ff9800;
+      }
+      /* Sticky Position */
+      .sticky {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 10px;/* to top se jab scroll krte krte 10px distance bchega to ye fixed ho jayega*/
+        background-color: #9c27b0;
+      }
+      /* Z-Index Example */
+      .z-index-container {
+        position: relative;
+        height: 150px; /* Container height for overlapping */
+      }
+      .z-low {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+        background-color: rgba(76, 175, 80, 0.5); /* Semi-transparent */
+      }
+      .z-high {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        z-index: 2;
+        background-color: rgba(255, 87, 34, 0.5); /* Semi-transparent */
+      }
+
+      @media screen and (max-width: 400px) {
+        .z-low {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          z-index: 3;
+          background-color: rgba(76, 175, 80, 0.5); /* Semi-transparent */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Position and Z-Index Demonstration</h1>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position"
+      >CLICKKKKKK</a
+    >
+
+    <!-- Static Position -->
+    <div class="box static">Static Position</div>
+
+    <!-- Fixed Position -->
+    <div class="box fixed">Fixed Position</div>
+
+    <!-- Absolute Position -->
+    <div class="absolute-container">
+      <div class="box absolute">Absolute Position</div>
+    </div>
+
+    <!-- Relative Position -->
+    <div class="box relative">Relative Position</div>
+
+    <!-- Sticky Position -->
+    <div class="box sticky">Sticky Position</div>
+
+    <!-- Z-Index Example -->
+    <div class="z-index-container">
+      <div class="box z-low">Z-Index Low</div>
+      <div class="box z-high">Z-Index High</div>
+    </div>
+  </body>
+</html>
+
+
+media query:----
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: pink;
+      }
+
+      @media screen and (min-width: 480px) {
+        body {
+          background-color: lightgreen;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resize the browser window to see the effect!</h1>
+    <p>
+      The media query will only apply if the media type is screen and the
+      viewport is 480px wide or wider.
+    </p>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .wrapper {
+        overflow: auto;
+      }
+
+      #main {
+        margin-left: 4px;
+      }
+
+      #leftsidebar {
+        float: none;
+        width: auto;
+      }
+
+      #menulist {
+        margin: 0;
+        padding: 0;
+      }
+
+      .menuitem {
+        background: #cdf0f6;
+        border: 1px solid #d4d4d4;
+        border-radius: 4px;
+        list-style-type: none;
+        margin: 4px;
+        padding: 2px;
+      }
+
+      @media screen and (min-width: 480px) {
+        #leftsidebar {
+          width: 200px;
+          float: left;
+        }
+        #main {
+          margin-left: 216px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="leftsidebar">
+        <ul id="menulist">
+          <li class="menuitem">Menu-item 1</li>
+          <li class="menuitem">Menu-item 2</li>
+          <li class="menuitem">Menu-item 3</li>
+          <li class="menuitem">Menu-item 4</li>
+          <li class="menuitem">Menu-item 5</li>
+        </ul>
+      </div>
+
+      <div id="main">
+        <h1>Resize the browser window to see the effect!</h1>
+        <p>
+          This example shows a menu that will float to the left of the page if
+          the viewport is 480 pixels wide or wider. If the viewport is less than
+          480 pixels, the menu will be on top of the content.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
 
 
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: tan;
+        color: black;
+      }
 
+      /* On screens that are 992px wide or less, the background color is blue */
+      @media screen and (max-width: 992px) {
+        body {
+          background-color: blue;
+          color: white;
+        }
+      }
+
+      /* On screens that are 600px wide or less, the background color is olive */
+      @media screen and (max-width: 600px) {
+        body {
+          background-color: olive;
+          color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resize the browser window to see the effect!</h1>
+    <p>
+      By default, the background color of the document is "tan". If the screen
+      size is 992px or less, the color will change to "blue". If it is 600px or
+      less, it will change to "olive".
+    </p>
+  </body>
+</html>
+
+
+responsive nav bar
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Style the top navigation bar */
+      .topnav {
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      /* Style the topnav links */
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* Change color on hover */
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .topnav a {
+          float: none;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Responsive navigation menu</h2>
+    <p>
+      Resize the browser window to see the effect: When the screen is less than
+      600px, the navigation menu will be displayed vertically instead of
+      horizontally.
+    </p>
+
+    <div class="topnav">
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </div>
+  </body>
+</html>
+
+
+responsive columns
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create four equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 25%;
+        padding: 20px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* On screens that are 992px wide or less, go from four columns to two columns */
+      @media screen and (max-width: 992px) {
+        .column {
+          width: 50%;
+        }
+      }
+
+      /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Responsive Four Column Layout</h2>
+    <p>
+      <strong>Resize the browser window to see the responsive effect.</strong>
+      On screens that are 992px wide or less, the columns will resize from four
+      columns to two columns. On screens that are 600px wide or less, the
+      columns will stack on top of each other instead of next to eachother.
+    </p>
+
+    <div class="row">
+      <div class="column" style="background-color: #aaa">
+        <h2>Column 1</h2>
+        <p>Some text..</p>
+      </div>
+
+      <div class="column" style="background-color: #bbb">
+        <h2>Column 2</h2>
+        <p>Some text..</p>
+      </div>
+
+      <div class="column" style="background-color: #ccc">
+        <h2>Column 3</h2>
+        <p>Some text..</p>
+      </div>
+
+      <div class="column" style="background-color: #ddd">
+        <h2>Column 4</h2>
+        <p>Some text..</p>
+      </div>
+    </div>
+  </body>
+</html>
 
