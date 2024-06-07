@@ -234,3 +234,355 @@ and in this way we can also use this like we do in addEventListner
 </html>
 
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Manipulation Example</title>
+    <style>
+      .editable {
+        border: 1px solid #ccc;
+        padding: 5px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML Attribute Manipulation Example</h1>
+    <p id="editableParagraph" class="editable">
+      This is a paragraph. Try modifying my attributes!
+    </p>
+    <input type="text" id="inputField" placeholder="Enter some text" />
+
+    <div>
+      <button id="makeEditableButton">Make Editable</button>
+      <button id="removeEditableButton">Remove Editable</button>
+      <button id="enableSpellcheckButton">Enable Spellcheck</button>
+      <button id="disableSpellcheckButton">Disable Spellcheck</button>
+      <button id="setPlaceholderButton">Set Placeholder</button>
+      <button id="removePlaceholderButton">Remove Placeholder</button>
+      <button id="setMaxLengthButton">Set Max Length to 10</button>
+      <button id="removeMaxLengthButton">Remove Max Length</button>
+      <button id="disableInputButton">Disable Input</button>
+      <button id="enableInputButton">Enable Input</button>
+    </div>
+
+    <script>
+      // Make paragraph editable
+      document
+        .getElementById("makeEditableButton")
+        .addEventListener("click", function () {
+          var paragraph = document.getElementById("editableParagraph");
+          paragraph.setAttribute("contenteditable", "true");
+          alert("Paragraph is now editable.");
+        });
+
+      // Remove paragraph editable attribute
+      document
+        .getElementById("removeEditableButton")
+        .addEventListener("click", function () {
+          var paragraph = document.getElementById("editableParagraph");
+          paragraph.removeAttribute("contenteditable");
+          alert("Paragraph is no longer editable.");
+        });
+
+      // Enable spellcheck on paragraph
+      document
+        .getElementById("enableSpellcheckButton")
+        .addEventListener("click", function () {
+          var paragraph = document.getElementById("editableParagraph");
+          paragraph.setAttribute("spellcheck", "true");
+          alert("Spellcheck enabled on paragraph.");
+        });
+
+      // Disable spellcheck on paragraph
+      document
+        .getElementById("disableSpellcheckButton")
+        .addEventListener("click", function () {
+          var paragraph = document.getElementById("editableParagraph");
+          paragraph.setAttribute("spellcheck", "false");
+          alert("Spellcheck disabled on paragraph.");
+        });
+
+      // Set placeholder on input field
+      document
+        .getElementById("setPlaceholderButton")
+        .addEventListener("click", function () {
+          var inputField = document.getElementById("inputField");
+          inputField.setAttribute("placeholder", "New placeholder text");
+          alert("Placeholder set on input field.");
+        });
+
+      // Remove placeholder from input field
+      document
+        .getElementById("removePlaceholderButton")
+        .addEventListener("click", function () {
+          var inputField = document.getElementById("inputField");
+          inputField.removeAttribute("placeholder");
+          alert("Placeholder removed from input field.");
+        });
+
+      // Set max length on input field
+      document
+        .getElementById("setMaxLengthButton")
+        .addEventListener("click", function () {
+          var inputField = document.getElementById("inputField");
+          inputField.setAttribute("maxlength", "10");
+          alert("Max length set to 10 on input field.");
+        });
+
+      // Remove max length from input field
+      document
+        .getElementById("removeMaxLengthButton")
+        .addEventListener("click", function () {
+          var inputField = document.getElementById("inputField");
+          inputField.removeAttribute("maxlength");
+          alert("Max length removed from input field.");
+        });
+
+      // Disable input field so we cannot take input in the input field
+      document
+        .getElementById("disableInputButton")
+        .addEventListener("click", function () {
+          var inputField = document.getElementById("inputField");
+          inputField.setAttribute("disabled", "true");
+          alert("Input field disabled.");
+        });
+
+      // Enable input field
+      document
+        .getElementById("enableInputButton")
+        .addEventListener("click", function () {
+          var inputField = document.getElementById("inputField");
+          inputField.removeAttribute("disabled");
+          alert("Input field enabled.");
+        });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Attribute Check and Input Value</title>
+  </head>
+  <body>
+    <h1>Dynamic Attribute Check and Input Value</h1>
+    <form id="inputForm">
+      <label for="inputField">Enter text:</label>
+      <input type="text" id="inputField" placeholder="Enter some text" />
+      <button type="button" id="getValueButton">Get Input Value</button>
+      <button type="button" id="checkAttributesButton">Check Attributes</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+      // Get the value of the input field
+      document
+        .getElementById("getValueButton")
+        .addEventListener("click", function () {
+          var inputField = document.getElementById("inputField");
+          //so here we have to use value not innertext to get the value of the inputfield
+          var inputValue = inputField.value;
+          document.getElementById("result").innerText =inputValue;
+        });
+
+      // Check for specific attributes and display the result
+      document
+        .getElementById("checkAttributesButton")
+        .addEventListener("click", function () {
+          var inputField = document.getElementById("inputField");
+          var attributesToCheck = ["placeholder", "maxlength", "disabled"];
+          var results = [];
+
+          attributesToCheck.forEach(function (attribute) {
+            if (inputField.hasAttribute(attribute)) {
+              results.push(
+                attribute + ": " + inputField.getAttribute(attribute)
+              );
+            } else {
+              results.push(attribute + ": not set");
+            }
+          });
+
+          document.getElementById("result").innerText =
+            "Attributes:\n" + results.join("\n");
+        });
+    </script>
+  </body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Attribute Check and Input Value</title>
+  </head>
+  <body>
+    <h1>Dynamic Attribute Check and Input Value</h1>
+    <form id="inputForm">
+      <label for="inputField">Enter text:</label>
+      <input type="text" id="inputField" placeholder="Enter some text" />
+      <button type="button" id="getValueButton">Get Input Value</button>
+      <button type="button" id="checkAttributesButton">Check Attributes</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        document.getElementById("getValueButton").addEventListener('click',function(){
+            let inputField=document.getElementById("inputField");
+            let inputValue=inputField.value;
+            document.getElementById("result").innerText=inputValue;
+        })
+        document.getElementById("checkAttributesButton").addEventListener('click',function(){
+            let inputField=document.getElementById("inputField");
+            let attributesTocheck=["placeholder","maxlength","disabled","contenteditable"];
+            let results=[];
+            
+            attributesTocheck.forEach((attr)=>{
+                //has attribute returns true or false okkkk
+                if(inputField.hasAttribute(attr)){
+                    results.push(attr+" :"+inputField.getAttribute(attr));
+                }
+                else{
+                    results.push(attr+" :No attribute");
+                }
+            })
+            document.getElementById("result").innerText="Attributes:\n"+results.join("\n");
+
+        })
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic List Traversal and Manipulation</title>
+  </head>
+  <body>
+    <h1>Dynamic List Traversal and Manipulation</h1>
+    <ul id="itemList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+
+    <button id="traverseButton">Traverse List</button>
+    <button id="replaceItemButton">Replace Item</button>
+    <button id="removeItemButton">Remove Item</button>
+
+    <div id="result"></div>
+
+    <script>
+      // Function to traverse and display the list items
+      document
+        .getElementById("traverseButton")
+        .addEventListener("click", function () {
+          var listItems = document.querySelectorAll("#itemList li");
+          var result = "List Items:\n";
+          listItems.forEach(function (item, index) {
+            result += "Item " + (index + 1) + ": " + item.innerText + "\n";
+          });
+          document.getElementById("result").innerText = result;
+        });
+
+      // Function to replace the second item in the list
+      document
+        .getElementById("replaceItemButton")
+        .addEventListener("click", function () {
+          var listItems = document.querySelectorAll("#itemList li");
+          if (listItems.length > 1) {
+            var newItem = document.createElement("li");
+            newItem.innerText = "New Item";
+            listItems[1].replaceWith(newItem);
+            alert("Item 2 has been replaced.");
+          } else {
+            alert("The list does not have enough items to replace.");
+          }
+        });
+
+      // Function to remove the last item in the list
+      document
+        .getElementById("removeItemButton")
+        .addEventListener("click", function () {
+          var listItems = document.querySelectorAll("#itemList li");
+          if (listItems.length > 0) {
+            listItems[listItems.length - 1].remove();
+            alert("Last item has been removed.");
+          } else {
+            alert("There are no items to remove.");
+          }
+        });
+    </script>
+  </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using innerHTML</title>
+  </head>
+  <body>
+    <h1>Using innerHTML Example</h1>
+    <div id="content">
+      <p>This is the initial content.</p>
+    </div>
+
+    <button id="changeContentButton">Change Content</button>
+    <button id="addContentButton">Add Content</button>
+    <button id="clearContentButton">Clear Content</button>
+
+    <script>
+      // Function to change the content of the div
+      document
+        .getElementById("changeContentButton")
+        .addEventListener("click", function () {
+          var contentDiv = document.getElementById("content");
+          contentDiv.innerHTML =
+            "<p>New content has been set!</p><p>More new content.</p>";
+        });
+
+      // Function to add content to the div
+      document
+        .getElementById("addContentButton")
+        .addEventListener("click", function () {
+          var contentDiv = document.getElementById("content");
+          contentDiv.innerHTML += "<p>Additional content added.</p>";
+        });
+
+      // Function to clear the content of the div
+      document
+        .getElementById("clearContentButton")
+        .addEventListener("click", function () {
+          var contentDiv = document.getElementById("content");
+          contentDiv.innerHTML = "";
+        });
+    </script>
+  </body>
+</html>
