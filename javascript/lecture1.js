@@ -146,6 +146,15 @@ for(let i=0;i<arr.length;i++){
     console.log(arr[i]);
 }
 
+let string="plz give amoutn Rs 1lakh";
+let amount=string.slice("plz give amoutn Rs".length);
+console.log(amount);//to remove some part from the string
+
+//method to convert datatype
+let string="01";
+console.log(typeof(string));
+console.log(typeof(parseInt(string)));
+
 
 // For loop
 console.log("For loop:");
