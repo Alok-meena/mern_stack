@@ -1,3 +1,65 @@
+let a=10;
+console.log(++a);
+console.log(a++);
+console.log(--a);
+console.log(a--);
+console.log(a);
+console.log(a--);//yha tk value to 10 thi but pahle value 10 print hui hai aor phir 9 ho gyi
+//decrement hoke aor niche print hui hai
+console.log(a);
+
+
+let a="alok";
+a=parseInt(a);
+console.log(typeof(a));
+
+//parseInt() is used to convert the datatype of the variable 
+
+//switch case
+let a=10;
+switch(a){
+    case 1:
+        console.log("no it's 1");
+        break;//use karna nhi to case match ke bad sare case run ho jayenge
+    case 10:
+        console.log("correct");
+        break;
+    case 2:
+        console.log("incorrect");
+        break;
+  default:
+    console.log("default case");
+}
+
+//for in loop is used to iterate objects and for of loop is never used for objects as it is not iterable
+let marks={
+    harry:90,
+    shubham:55,
+    raj:60
+}
+
+for(i in marks){
+    console.log("The marks of ",i,"is:",marks[i]);
+}
+
+//code to enter a number until we enter correct number
+let n=44;
+let i;
+while(i!=n){
+    alert("try again");
+
+    i=prompt("enter the number");
+}
+console.log("you have entered correct number");
+
+//continue harry
+
+//ternary operator
+let a=10;
+a==10?console.log("yes it is",a):console.log("no it is not");
+console.log("YOU can",(a<18?"not drive":"drive"));
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -55,6 +117,35 @@ console.log("Addition: " + add(a, b)); // 30
 console.log("Subtraction: " + subtract(a, b)); // -10
 
 // Different types of loops
+
+//forEach loop
+let arr=[1,"alok",2,"aman"];
+let obj1={
+    "name":"alok",
+    "age":20,
+    "country":"INDIA"
+}
+arr.forEach(function(i){
+    console.log(i);
+})
+
+//can use like this also
+arr.forEach(i=>(
+    console.log(i)
+));
+
+//toUpperCase() function is used to conver the string to upper case
+let arr=["dear","alok","and","aman"];
+let obj1={
+    "name":"alok",
+    "age":20,
+    "country":"INDIA"
+}
+for(let i=0;i<arr.length;i++){
+    arr[i]=arr[i].toUpperCase();
+    console.log(arr[i]);
+}
+
 
 // For loop
 console.log("For loop:");
