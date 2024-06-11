@@ -125,8 +125,13 @@ let obj1={
     "age":20,
     "country":"INDIA"
 }
-arr.forEach(function(i){
+arr.forEach((i)=>{
     console.log(i);
+})
+
+let a=[52,14,3,2,1,0];
+a.forEach((element)=>{
+    console.log(element*element);
 })
 
 //can use like this also
@@ -154,6 +159,9 @@ console.log(amount);//to remove some part from the string
 let string="01";
 console.log(typeof(string));
 console.log(typeof(parseInt(string)));
+// If the first character cannot be converted, NaN is returned.
+
+
 
 
 // For loop
@@ -266,6 +274,144 @@ for (let i = 0; i < numbers.length; i++) {
     }
     console.log(numbers[i]);
 }
+
+//map method
+let a=[1,2,3,4,6];
+let b=a.map((value)=>{
+    console.log(value);
+    return value+1;
+})
+console.log(b);
+
+let n=Math.random();
+//this is used in js to generate a random number
+
+
+//a guess game
+let n=Math.random();
+let guesses=1;
+let b=prompt("enter the number between 0 and 100:");
+if(n==b){
+    alert("you guessed it correct CONGRATULATIONS...");
+    document.write("this is the number of guesses taken by you:",guesses);
+}
+else{
+    if(b>n){
+        alert("number is bigger");
+    }
+    else if(b<n){
+        alert("number is smaller");
+    }
+}
+while(b!=n && guesses!=10){
+    let d=prompt("enter the number:");
+    if(d>n){
+        alert("number is bigger");
+    }
+    else if(d<n){
+        alert("number is smaller");
+    }
+    guesses++;
+}
+if(guesses==10){
+    document.write("YOU LOSS YOUR GUESSES HAS CROSSES THE LIMIT OF 100 GUESSESd \n");
+    document.write("CORRECT RANADOM NUMBER IS:",n);
+}
+if(n==d){
+    alert("you guessed it correct CONGRATULATIONS...");
+    document.write("this is the number of guesses taken by you:",guesses);
+}
+
+
+//prompt always have string type of the input
+//we have to do this to convert the datatype of the prompt input
+alert("enter the value of b!");
+let b=prompt("enter the value","45");
+b=Number.parseInt(b);
+alert("you have enetered b of type "+(typeof(b)));
+
+
+//confirm button return true for OK button and false for cancel button
+
+let b=confirm("do you want to enter the value?");
+if(b){
+    document.write("yes i want , and you pressed ok button");
+}
+else{
+    document.write("you pressed CANCEL button");
+}
+
+//location.href is used to redirec to any website
+let b=confirm("do you want to enter the value?");
+if(b){
+    location.href="https://google.com";
+}
+else{
+    document.write("you pressed CANCEL button");
+}
+
+//snake water gun game
+let a=["gun","snake","water"];
+let chances=0;
+while(chances!=10){
+    let b=a[(Math.floor(Math.random() * a.length))]
+    let input=prompt("enter gun/water/snake");
+    if(input=="gun" && b=="snake"){
+        alert("you won as you have gun and shoot the snake");
+        break;
+    }
+    if(input=="water" && b=="gun"){
+        alert("you won as you have water and gun doob jayegi");
+        break;
+    }
+    if(input=="snake" && b=="water"){
+        alert("you won as snake will drink the water");
+        break;
+    }
+    if(input=="snake" && b=="gun"){
+        alert("you loss as your snake will be shoot down by the gun");
+        chances++;
+        continue;
+    }
+    if(input=="gun" && b=="water"){
+        alert("you loss as your gun will sink in the water");
+        chances++;
+        continue;
+    }
+    if(input=="water" && b=="snake"){
+        alert("you loss as snake will drink the water");
+        chances++;
+        continue;
+    }
+}
+
+
+
+
+//time() and timeEnd() function to check how long time our code takes to execute
+console.time("forLoop");
+for(let i=0;i<10;i++){
+  console.log(1);
+}
+
+console.timeEnd("forLoop");
+
+console.time("whileLoop");
+let i=0;
+while(i<10){
+    console.log(1);
+}
+console.timeEnd("whileLoop");
+
+
+
+
+//array reduce method always return a single value as output 
+let a=[1,2,3,4,6];
+let b=a.reduce((c,d)=>{
+    return d+c;
+})
+console.log(b);
 
 // Nested loops
 console.log("Nested loops:");
