@@ -343,7 +343,7 @@
                     e.preventDefault();
                     let draggingItem = document.querySelector(".dragging");
                     if (draggingItem !== listItem) {//dragging item is not equal to curent item then do this
-                        todoList.insertBefore(draggingItem, listItem.nextSibling);
+                        todoList.insertBefore(draggingItem, listItem);//listItem.sibling hta diya bs
                     }
                 })
 
