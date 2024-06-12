@@ -75,6 +75,41 @@ DOM MANIPULATION (DOCUMENT OBJECT MODEL) IN JS
 </body>
 </html>
 
+//code to check difference between innerText and innerHTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="p">This is a paragraph</p>
+        <span>hello</span>
+    </div>
+    <h1 id="d">This is a heading
+        <code>code</code>
+        <code>code2</code>
+        <span>h</span>
+    </h1>
+    <button id="button1">button1</button>
+    <button id="button2">button2</button>
+    <script>
+        document.getElementById("button1").addEventListener('click',function(){
+           let x=document.getElementById("p");
+           alert(x.innerText);
+        })
+        document.getElementById("button2").addEventListener('click',function(){
+            let y=document.getElementById("d");
+            alert(y.innerHTML);
+        })
+    </script>
+</body>
+</html>
+
+
+
 
 we can use this setAttribute and using this we can add any attribute like here we have added 
 a class attribute to the html element
@@ -278,7 +313,7 @@ and in this way we can also use this like we do in addEventListner
           alert("Paragraph is now editable.");
         });
 
-      // Remove paragraph editable attribute
+      // Remove paragraph editable attribute ya to uper just false kr do
       document
         .getElementById("removeEditableButton")
         .addEventListener("click", function () {
@@ -403,6 +438,7 @@ and in this way we can also use this like we do in addEventListner
           var results = [];
 
           attributesToCheck.forEach(function (attribute) {
+              //hasattirbute return t/f attribute exits or not and get one returns attribute
             if (inputField.hasAttribute(attribute)) {
               results.push(
                 attribute + ": " + inputField.getAttribute(attribute)
@@ -500,7 +536,7 @@ and in this way we can also use this like we do in addEventListner
       document
         .getElementById("traverseButton")
         .addEventListener("click", function () {
-          var listItems = document.querySelectorAll("#itemList li");
+          var listItems = document.querySelectorAll("#itemList li");//means listitem id ke ander ke sabhi li ko utaho
           var result = "List Items:\n";
           listItems.forEach(function (item, index) {
             result += "Item " + (index + 1) + ": " + item.innerText + "\n";
