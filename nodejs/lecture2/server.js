@@ -9,11 +9,12 @@ const app=express();//to express ko call kiya aor uski functionalities app me aa
 //if 3000 is busy can use 8080 also
 const port=3000;
 
+//this 13-15 is GET api okkk!!!!
 app.get("/",(req,res)=>{
     res.send("Hello World");
 });
 
-app.listen(3000);
+app.listen(3000);//mtlb jab bhi koi 3000 port pe request bhejega tab use response milega
 
 to isse hmara server run hoga localhost:3000 pe
 
