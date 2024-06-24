@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple form</title>
+</head>
+<body>
+    <h1>Submit Your Details</h1>
+    <!--to niche action me konsi api call hogi koi bhi nam de skte ho vo aor method
+    f.e se b.e ko data bheja to post method-->
+    <form action="/submit" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><!--ye input me jo name
+        diya hai vo jata hai backend pe-->
+        <br><br><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" requird>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
