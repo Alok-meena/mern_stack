@@ -23,13 +23,18 @@ When a form is submitted via a POST request, the data in the form is URL-encoded
 body-parser helps to extract this data and convert it into a JavaScript object that can be easily accessed and used within your application.
 
 
-    
+WHAT DOES BODY PARSER USED
+
+app.use(bp.urlencoded({extended: true}) does the same for URL-encoded requests. the extended: true precises that the req.body 
+object will contain values of any type instead of just strings.
+
+
 const express=require("express");
 const bodyParser=require("body-parser");//used to encode the bit by bit data
 const app=express();
 const port=3000;
 
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true}));//MEANS ENCODING URL DATA AND 
 
 app.get("/",(req,res)=>{
     res.sendFile(__dirname + "/index.html");//aor / deke file ka nam dena
