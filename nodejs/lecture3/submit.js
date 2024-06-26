@@ -1,4 +1,14 @@
+YHA PE HAM SERVER PE HI APNE FORM KO RUN KRENGE AND 
+WE WILL SEE HOW WE GET THE DATA...
 
+
+
+
+
+
+
+
+    
 const express=require("express");
 const bodyParser=require("body-parser");
 const app=express();
