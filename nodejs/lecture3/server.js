@@ -95,11 +95,27 @@ app.get("/items/:name",(req,res)=>{
     }
 })
 
+// GET: Retrieve an item by ID (Request Param)
+// curl -X GET http://localhost:3000/items/1
+app.get("/items/:id", (req, res) => {
+    const id = parseInt(req.params.id, 10);//because api me data string format me jata hai
+    const item = items.find((item) => item.id === id);
+  
+    if (item) {
+      res.json(item);
+    } else {
+      res.status(404).json({ error: "Item not found" });
+    }
+  });
+
 //this method is used if we want to send only 1 variable 
 //BUT IF WE WANT TO SEND MULTIPLE VARIABLES THEN WE HAVE TO USE QUERY PARAMS
 
 //QUERY PARAMS....
 //and inside path give search aor get me postman me path me like /searach?name=alok ese hi
+
+THIS METHOD IS BY USING FIND 
+
 app.get("/search",(req,res)=>{
     const name=req.query.name;
 
@@ -110,6 +126,19 @@ app.get("/search",(req,res)=>{
       
     res.status(404).json({error:"Item not found"});
 })
+
+THIS METHOD IS BY USING FILTER
+
+app.get("/search",(req,res)=>{
+    const name=req.query.name;
+    // const filterItem=items.find((item)=>item.name==name);
+    const filterItem=items.filter((item)=>item.name.includes(name));
+    if(filterItem){
+        res.status(201).json(filterItem);
+    }
+      
+    res.status(404).json({error:"Item not found"});
+})    
 
 
 
