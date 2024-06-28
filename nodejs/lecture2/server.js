@@ -69,7 +69,7 @@ const app=express();//to express ko call kiya aor uski functionalities app me aa
 const port=3000;
 
 //it is used so that to tell that data is of json format doing json parse
-app.use(express.json());
+app.use(express.json()); //AOR YE HAMNE POSTMAN USE KARTE TIME HI KIYA HAI
 
 
 let items=[];
