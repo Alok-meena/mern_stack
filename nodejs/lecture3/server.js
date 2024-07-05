@@ -167,18 +167,37 @@ app.get("/search",(req,res)=>{
 
 3). BY THIS CODE WE CAN SORT THE ITEMS BY ID OR NAME
 
-app.get("/sort", (req, res) => {
+pp.get("/sort", (req, res) => {
+    //...items do shallow copy of the array items
     let sortedItems = [...items];
-    const sortBy = req.query.sortBy;
-    
+    const sortBy = req.query.sortBy; // 'id' or 'name'
+    const order = req.query.order;   // 'asc' or 'desc'
+
     if (sortBy === 'id') {
         sortedItems.sort((a, b) => a.id - b.id);
     } else if (sortBy === 'name') {
-        sortedItems.sort((a, b) => a.name.localeCompare(b.name));
+        sortedItems.sort((a, b) => {
+            sortedItems.sort((a, b) => a.name.localeCompare(b.name));
+        });
     }
+
+    if (order === 'desc') {
+        sortedItems.reverse();
+    }
+    
 
     res.json(sortedItems);
 });
+
+TO BAS QUERY PARAMS ME SORTBY KA METHOD AND ORDER IN ASC OR DESC KE ACCORDING 
+SORT HO JAYEGA
+
+
+
+WHAT DOES LOCALCOMPARE DO
+//The localeCompare() method compares two strings in the current locale. 
+//The localeCompare() method returns sort order -1, 1, or 0 (for before, after, or equal).
+//The current locale is based on the language settings of the browser.
 
 
 //use this http://localhost:3000/sort?sortBy=id
