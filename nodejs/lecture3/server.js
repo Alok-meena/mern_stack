@@ -176,7 +176,7 @@ pp.get("/sort", (req, res) => {
     if (sortBy === 'id') {
         sortedItems.sort((a, b) => a.id - b.id);
     } else if (sortBy === 'name') {
-            sortedItems.sort((a, b) => a.name.localeCompare(b.name));
+            sortedItems.sort((a, b) => a.name.localeCompare(b.name));//to bas a and b ke name ko compare kiya hai
     }
 
     if (order === 'desc') {
