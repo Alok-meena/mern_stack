@@ -55,7 +55,7 @@ app.put("/items/:id",(req,res)=>{
 
     if(item){
         item.name=req.body.name;
-        res.status(200).json(items);
+        res.status(200).json(items);//items yani sare item bhej diye only changed item bhi bhej skte the
     }
     else{
         res.status(404).json({error: "Item not found"});
