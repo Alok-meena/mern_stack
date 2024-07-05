@@ -39,7 +39,8 @@ let items=[
     {id:4,name:"Alok3"},
 ];
 
-app.get("/items",(req,res)=>{
+app.get("/items",(req,res)=>{   VERY VERY IMP KI YHA PE HAMNE /ITEMS KIYA HAI TAKI JB URL ME /ITEMS DALE TAB YE AATE NHI DETE AOR / YE RHTA TB BHI AATA BUT NOT 
+                                THAT MUCH COOL 
     res.json(items);
 })
 
