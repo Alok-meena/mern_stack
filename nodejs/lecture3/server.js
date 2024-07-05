@@ -46,6 +46,7 @@ lecture 3 pahle vala lecture 2 ka hai
 
 //ye jo path me /:id hai means / ke bad ager ye variable ho to kya changes karne honge
 //and to pick it use req.params.id
+//jaise uper body ko pick kiya req.body se so parameter doge alag se koi bhi
 
 //aor path me koi bhi id deke uski koi bhi property change krva skte hai
 
@@ -86,6 +87,9 @@ app.delete("/items/:id",(req,res)=>{
 //METHOD TO GET THE NAME FROM THE ITEMS LIST BY WRITING IT IN THE PATH
 
 app.get("/items/:name",(req,res)=>{
+
+    //VERY IMP KI UPER JO PARAMETER DIYA HAI VO PICK KRO PAHLE PARAMS USE KRKE
+    //THEN FIND IT IN THE ARRAY
     const name=req.params.name;
 
     const nameItem=items.find((item)=>item.name==name);
@@ -116,7 +120,7 @@ app.get("/items/:id", (req, res) => {
 //QUERY PARAMS....
 //and inside path give search aor get me postman me path me like /searach?name=alok ese hi
 
-THIS METHOD IS BY USING FIND 
+//search ke alava khuch aor bhi use kr skte hai but hamne ye kiya hai for understanding
 
 app.get("/search",(req,res)=>{
     const name=req.query.name;
@@ -129,7 +133,7 @@ app.get("/search",(req,res)=>{
     res.status(404).json({error:"Item not found"});
 })
 
-THIS METHOD IS BY USING FILTER
+THIS METHOD IS BY USING FILTER AND THE ABOVE ONE IS USING FIND METHOD
 
 app.get("/search",(req,res)=>{
     const name=req.query.name;
