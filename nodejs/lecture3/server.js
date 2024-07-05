@@ -176,9 +176,7 @@ pp.get("/sort", (req, res) => {
     if (sortBy === 'id') {
         sortedItems.sort((a, b) => a.id - b.id);
     } else if (sortBy === 'name') {
-        sortedItems.sort((a, b) => {
             sortedItems.sort((a, b) => a.name.localeCompare(b.name));
-        });
     }
 
     if (order === 'desc') {
