@@ -1,3 +1,4 @@
+//to isme ham function export krte hai to yha () arrow function return kr diya hai
 module.exports=(req,res,next)=>{
     const authHeader=req.headers["authorization"];//req.headers kiya to include all headers
     console.log(authHeader);
