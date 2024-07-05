@@ -133,7 +133,7 @@ app.get("/search",(req,res)=>{
     res.status(404).json({error:"Item not found"});
 })
 
-THIS METHOD IS BY USING FILTER AND THE ABOVE ONE IS USING FIND METHOD
+1). THIS METHOD IS BY USING FILTER AND THE ABOVE ONE IS USING FIND METHOD
 
 app.get("/search",(req,res)=>{
     const name=req.query.name;
@@ -147,7 +147,41 @@ app.get("/search",(req,res)=>{
 })    
 
 
+2). BY THIS CODE WE CAN ACCESS MULTIPLE PARAMETERS BY SEARCHING
 
+
+app.get("/search",(req,res)=>{
+    const id=parseInt(req.query.id,10);
+    const name=req.query.name;
+    //yha filter hi use hoga if both condition true then return multiple 
+    const item=items.filter((itemm)=>(itemm.id===id || itemm.name===name));
+    
+    if(item){
+        res.json(item);
+    }
+    else{
+        res.status(404).json({error:"Item and Id not found"});
+    }
+})
+
+
+3). BY THIS CODE WE CAN SORT THE ITEMS BY ID OR NAME
+
+app.get("/sort", (req, res) => {
+    let sortedItems = [...items];
+    const sortBy = req.query.sortBy;
+    
+    if (sortBy === 'id') {
+        sortedItems.sort((a, b) => a.id - b.id);
+    } else if (sortBy === 'name') {
+        sortedItems.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    res.json(sortedItems);
+});
+
+
+//use this http://localhost:3000/sort?sortBy=id
 
 app.listen(port,()=>{
     console.log(`SERVER RUNNING AT http://localhost:${port}/`);
