@@ -36,6 +36,18 @@ const port=3000;
 
 app.use(bodyParser.urlencoded({ extended: true}));//MEANS ENCODING URL DATA AND 
 
+
+//why /index.html ./ is not used
+//In an Express application, when you use res.sendFile() to send a file, 
+//you need to provide an absolute path or a path that can be resolved correctly.
+
+//or better to use path
+
+//res.sendFile(path.join(__dirname, "index2.html")); 
+
+//Use ./ for files in the current directory.
+//Use ../ for files in the parent directory.
+
 app.get("/",(req,res)=>{
     res.sendFile(__dirname + "/index.html");//aor / deke file ka nam dena
     //because hm file bhej rhe hai aor ham response me kafi type bhej skte hai
