@@ -49,7 +49,7 @@ lecture 3 pahle vala lecture 2 ka hai
 
 //aor path me koi bhi id deke uski koi bhi property change krva skte hai
 
-//using PARAMS
+//using REQUEST PARAMS
 app.put("/items/:id",(req,res)=>{
     const id=parseInt(req.params.id);
 
