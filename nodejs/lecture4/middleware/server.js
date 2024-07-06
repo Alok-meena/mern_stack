@@ -2,6 +2,12 @@
 const express=require("express");
 const app=express();
 //ye dono middleware hamne alag se file me likha because sabhi api me use krna hai
+
+Node.js require: Uses relative paths (e.g., ./auth.js) to locate modules on the filesystem relative to the file doing the requiring
+
+HTTP API calls: Use paths relative to the server's root directory (e.g., /a.html), not the filesystem.
+
+
 const basicAuth=require("./auth.js");
 const logger=require("./logger.js");//it is used to display which api is called
 const port=3000;
