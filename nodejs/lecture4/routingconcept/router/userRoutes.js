@@ -1,5 +1,12 @@
 const express=require("express");
-const router=express.Router();
+
+express.Router() is a built-in method provided by Express.js to create a new router object.
+express.Router() is a function provided by Express. When you call it, it creates a new Router object.
+This Router object is used to define routes and middleware.
+
+    
+const router=express.Router();//R capital hona chahihe aor ye ek inbuilt function hai
+//jo routing ko on kr dega
 
 const users=[
     {id:1,name:"Alok"},
@@ -8,7 +15,7 @@ const users=[
 
 
 //this api will get all the users
-router.get("/",(req,res)=>{
+router.get("/",(req,res)=>{//ab yha router me Router fun call kiya to use hi use karna hai
     res.json(users);
 })
 
@@ -37,4 +44,9 @@ router.post("/",(req,res)=>{
     res.status(201).json(newuser);
 })
 
+
+//When you export router, you are exporting this instance of the Router object.
+//Since you are exporting an instance, you use module.exports = router.
+ //and it is not a function that's why {} is not used
 module.exports=router;
+//aor yha exports me curley brackets mt lagana
