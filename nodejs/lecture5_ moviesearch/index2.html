@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #results {
+        margin-top: 20px;
+      }
+      .movie {
+        margin-bottom: 20px;
+      }
+      .movie img {
+        max-width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Movie Search App</h1>
+    <input type="text" id="query" placeholder="Enter movie name" />
+    <button onclick="searchMovies()">Search</button>
+    <div id="results"></div>
+
+    <script>
+      async function searchMovies() {
+        const query = document.getElementById("query").value;//to jo enter krenge vo value aa jayegi variable me
+        try {
+          const response = await fetch(`/search?query=${query}`);
+          const data = await response.json();//means rsponse is converted into json
+
+          const results = document.getElementById("results");
+          results.innerHTML = "";
+          data.Search.forEach((movie) => {//search array me hmara data hai jb aap axios me terimnal pe check kroge
+            //to bs har movie ke liye div bna rhe aor fir usko usme dal denge
+            const movieDiv = document.createElement("div");
+            movieDiv.className = "movie";
+            movieDiv.innerHTML = `
+                      <h2>${movie.Title}</h2>
+                      <p>${movie.Year}</p>
+                      <img src="${movie.Poster}" alt="${movie.Title}">
+                  `;//image ka link poster me hi tha
+            results.appendChild(movieDiv);
+          });
+        } catch (error) {
+          console.error("Error fetching movie data:", error);
+        }
+      }
+    </script>
+  </body>
+</html>
+
