@@ -5,12 +5,21 @@
 
  //very imp ki ham ./ use kro jab path dena ho 
  //and use ./ to go forward and use ./../ to go backward
+
+
  const userRoutes=require("./routes/userRoutes");
  const bookRoutes=require("./routes/bookRoutes");
 
  app.use(express.json());
 
-app.use("/api/users",userRoutes);//ye router hoga tabhi uspe jayega apna pointer okk
+//to jab localhost:3000/api/users call ho to ye uerRoutes vali file me jaye jo hmne pahle hi
+//uper import kr li hai taki code neat rhe aor differnt files bna ke easily work kre
+
+//TO BASICALLY YE HAMNE ROUTING KI HAI KI YE CALL HO TO ISSE PATH BTA DIYA KI IS FILE ME JANA HAI
+the process of path selection in any network IS CALLED ROUTING
+
+app.use("/api/users",userRoutes);
+//ye router hoga tabhi uspe jayega apna pointer okk
 
 app.use("/api/books",bookRoutes);
 
