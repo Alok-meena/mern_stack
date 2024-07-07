@@ -14,7 +14,11 @@ const logger=require("./logger.js");//it is used to display which api is called
 const port=3000;
 
 app.use(express.json());//ye to hamne postman pe data post ya get krne ke liye json format aa rha iske liye bheja tha
-app.use(logger);//it is to use logger in all api's
+app.use(logger);//to ye hamne yha diya to sbhi api pe work krega jo bhi call hogi
+//but ager ham ise kisi specific api me dete to vhi work karta jaise dekho nich public me diya
+//"/public",logger,(req,res)=> LIKE THIS
+
+//it is to use logger in all api's
 
 app.get("/public",(req,res)=>{
     res.send("THIS IS PUBLIC API");
