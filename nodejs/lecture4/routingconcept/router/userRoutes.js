@@ -43,6 +43,18 @@ router.post("/",(req,res)=>{
     users.push(newuser);
     res.status(201).json(newuser);
 })
+this is also correct
+
+can also use the following for post does same what this does
+but in post man do like this 
+{ "id":1,"name":"alk"} use quotes in key's because it is json format okk
+
+// router.post("/",(req,res)=>{
+//     const newuser=req.body.name;
+//     const id=req.body.id;
+//     users.push({id:id,name:newuser});
+//     res.json({id:id,name:newuser});
+// })
 
 
 //When you export router, you are exporting this instance of the Router object.
