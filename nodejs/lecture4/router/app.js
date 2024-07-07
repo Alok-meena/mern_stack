@@ -10,7 +10,11 @@
  const userRoutes=require("./routes/userRoutes");
  const bookRoutes=require("./routes/bookRoutes");
 
- app.use(express.json());
+YHA PE HAMNE SBHI API JO ROUTING KE THROUGH CALLL HOGI UNKE LIYE BTA DIYA
+KI DATA JSON FORMAT ME HOGA
+
+//to un folders me express.Router() routing ko enable kr dega
+ app.use(express.json()); 
 
 //to jab localhost:3000/api/users call ho to ye uerRoutes vali file me jaye jo hmne pahle hi
 //uper import kr li hai taki code neat rhe aor differnt files bna ke easily work kre
@@ -19,6 +23,10 @@
 the process of path selection in any network IS CALLED ROUTING
 
 app.use("/api/users",userRoutes);
+//very imp ham yha /users krke bhi kr skte the but for better understanding 
+//ki which api then it's path to ese aor folder alag se bnaya vo bhi for clearity okk
+
+
 //ye router hoga tabhi uspe jayega apna pointer okk
 
 app.use("/api/books",bookRoutes);
