@@ -23,6 +23,9 @@ KI DATA JSON FORMAT ME HOGA
 the process of path selection in any network IS CALLED ROUTING
 
 app.use("/api/users",userRoutes);
+//ye userRoutes ye routes hona chahihe tbhi yha jayenge aor express.Router() btata hai
+//ki file hm code routing ka hai okk
+
 //very imp ham yha /users krke bhi kr skte the but for better understanding 
 //ki which api then it's path to ese aor folder alag se bnaya vo bhi for clearity okk
 
