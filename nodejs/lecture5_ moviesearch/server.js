@@ -17,7 +17,7 @@ app.get("/",(req,res)=>{
 //so search ko click krne pe ye search vali api call ho rhi hai
 app.get("/search",async (req,res)=>{
     const name=req.query.query;//because html me delhi hmne search?query hi diya hai
-    const response=await axios.get("http://www.omdbapi.com/",{
+    const response=await axios.get("http://www.omdbapi.com/",{ //omd is open movie database
         params:{
             apikey:apikey,
             s:name,
