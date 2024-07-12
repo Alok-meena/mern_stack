@@ -2,7 +2,8 @@
 
 
 module.exports=(req,res,next)=>{
-    console.log("API----->>>",req.method,req.url);//it is req.url type of api means url return krega
+    console.log("API----->>>",req.method,req.url);//to method bhejega like get/post/put and url name bhejega
+    //it is req.url type of api means url return krega
     //and req.method is used to console.log the api which is called
     next();//mtlb ki middleware is completed and go ahead
 }
