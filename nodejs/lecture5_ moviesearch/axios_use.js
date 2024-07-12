@@ -8,7 +8,8 @@ async function makeApiCalls(){
             },
         }
     );
-    
+
+    //to jaise hamne ye data bheja to ye site ki last ki next id pe bnke print kr liya but site pe show nhi hoga
     const postResponse2=await axios.post(
         "https://jsonplaceholder.typicode.com/posts",
         {
@@ -17,7 +18,44 @@ async function makeApiCalls(){
             userId:10,
         }
     );
+
+
+
+
+    
+    //body={
+            // title:"something",
+            // body:"something",
+            // userId:10,
+    // }
+    // const postResponse2=await axios.post("https://jsonplaceholder.typicode.com/posts",body);
+    
     console.log(postResponse2.data);
 }
 
 makeApiCalls();
+
+
+
+HERE WE CAN ALSO USE THEN AND CATCH TO CATCH THE ERROR IF DATA IS NOT PRINTED OR ANY OTHER ERROR
+
+try {
+    let data = JSON.parse(someJSONString);
+    console.log(data);
+} catch (error) {
+    console.error('Invalid JSON string:', error);
+}
+
+
+someAsyncFunction()
+    .then(result => {
+        // Handle the result
+        console.log(result);
+    })
+    .catch(error => {
+        // Handle the error
+        console.error('An error occurred:', error);
+    });
+
+
+
