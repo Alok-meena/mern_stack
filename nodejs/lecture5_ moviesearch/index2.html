@@ -30,20 +30,30 @@
       async function searchMovies() {
         const query = document.getElementById("query").value;//to jo enter krenge vo value aa jayegi variable me
         try {
+          //yha await use kiya hai because response me time lgega same nich bhi to use kiya hai
           const response = await fetch(`/search?query=${query}`);
-          const data = await response.json();//means rsponse is converted into json
+          //to search hmari ek api hogi jo ham node ms bnayenge and ?query means 
+          //hamne query params use kiya hai by name of the movie to serch it 
 
+          
+          const data = await response.json();//means rsponse is converted into json
+          //like ager response hme string me mila to ye kr rhe hai 
+
+          //ab jo data aayega vo like is format me hai title year id  imd and then image 
+          //to is div ke ander properly dalenge ab ham
           const results = document.getElementById("results");
           results.innerHTML = "";
+          //yha niche data. kiya because ye data jo hamne search kiya to mile ab isi data ko search
+          //array me access/iterate krke div me dal rhe hai 
           data.Search.forEach((movie) => {//search array me hmara data hai jb aap axios me terimnal pe check kroge
             //to bs har movie ke liye div bna rhe aor fir usko usme dal denge
             const movieDiv = document.createElement("div");
             movieDiv.className = "movie";
             movieDiv.innerHTML = `
-                      <h2>${movie.Title}</h2>
+                      <h2>${movie.Title}</h2 
                       <p>${movie.Year}</p>
                       <img src="${movie.Poster}" alt="${movie.Title}">
-                  `;//image ka link poster me hi tha
+                  `;//image ka link poster me hi tha aor ye title / year bhi usme ese hi the to bs fetch kiya hai unki value ko
             results.appendChild(movieDiv);
           });
         } catch (error) {
