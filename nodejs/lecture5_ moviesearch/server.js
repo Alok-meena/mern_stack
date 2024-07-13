@@ -11,11 +11,16 @@ app.use(express.urlencoded({ extended: true }));
 //means while / api called load the webpage here
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname, "index2.html"));
-})
+})//yha async use nhi kiya bs vhi pe karna jha output aane me time lge
 
 //ab apni search api bnayenge
 
 //so search ko click krne pe ye search vali api call ho rhi hai
+
+
+Fetching Data from APIs:
+When making HTTP requests, reading/writing files asynchronously, or performing database operations, use async and await.
+    
 app.get("/search",async (req,res)=>{
 
     //to suno suno jab query params me ham niche likhte the to uper link apne ap update hota tha
