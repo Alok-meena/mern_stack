@@ -26,11 +26,25 @@ app.get("/search",async (req,res)=>{
     return res.status(200).json(response.data);
 })
 
-// const fun=async ()=>{
+
+ESA HAI ISLIYE hi ham site me params krke pahle to api key and then method how to search bhej rhe hai
+
+Send all data requests to:
+
+http://www.omdbapi.com/?apikey=[yourkey]&
+
+Poster API requests:
+
+http://img.omdbapi.com/?apikey=[yourkey]&
+
+//YE TO HAMNE AXIOS KO USE KRKE INKI API KO CALL KIYA HAI AOR DATA UTHAYA HAI 
+
+//so params me ham id se bhi search kr skte the but ham to name se hi kr rhe hai
+// const fun=async ()=>{// TO YE ARROW FUNCTION THAT TO ASYNC () CALL KRNE KE PAHLE LIKHNA Hai
 //     const response= await axios.get("http://www.omdbapi.com/",{
 //         params:{
 //             apikey:apikey,
-//             s:"Ghatak",
+//             s:"Ghatak",//so inhone inki website pe btaya hai ki for search s dalna pdega
 //         },
 //     });
 //     console.log(response.data);
