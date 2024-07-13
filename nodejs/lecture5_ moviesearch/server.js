@@ -5,7 +5,24 @@ const path=require("path");
 const port=3000;
 const apikey="471e8972";
 
+
+Make sure your folder structure looks something like this to include the image
+
+
+bash
+Copy code
+/your-project
+│
+├── /public
+│   ├── movie.jpg
+│
+├── index2.html
+└── server.js
+
+
 // app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
+//do this to include the image
 app.use(express.urlencoded({ extended: true }));
 
 //means while / api called load the webpage here
