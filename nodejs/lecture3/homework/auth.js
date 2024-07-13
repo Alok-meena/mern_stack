@@ -84,6 +84,37 @@ app.get("/read",(req,res)=>{
     
 })
 
+//VEERY IMP ki postman me : ka use krke acces mt karna normally /1 dal dena jo bhi id update krni ho
+app.put("/edit/:id",(req,res)=>{
+    const id=parseInt(req.params.id);
+    const { name,phone }=req.body;
+    const user=book.find((user)=>user.id===id);
+    if(!user){
+        return res.status(404).json({error:"Book Not Found"});
+    }
+
+    user.name=name;
+    user.phone=phone;
+    fs.writeFile(filepath,JSON.stringify(book,null,2),(err)=>{
+        if(err){
+            console.log("Error while editing the file:",err);
+            res.status(500).json({error:"Failed to update the user"});
+        }
+        console.log("data of the user has been modified");
+        res.json(user);
+    })
+})
+
+app.delete('/deleteAll', (req, res) => {
+    fs.writeFile(filepath, '[]', (err) => { 
+        if (err) return res.status(500).json({ error: 'file not found' });
+        book=[];//do this as we are storing everything in book so it will contain after 
+        //closing the server also so after deleting everything empty the book also
+        res.status(200).json({ message: 'All users deleted successfully' });
+    });
+
+});
+
 app.listen(port,()=>{
     console.log("SERVER RUNNING AT http://localhost:3000");
 })
