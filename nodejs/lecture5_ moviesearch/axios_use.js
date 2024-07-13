@@ -3,6 +3,8 @@ async function makeApiCalls(){
     const getResponse1=await axios.get(
         "https://jsonplaceholder.typicode.com/posts",
         {
+            //jaise yha jo ye params me bheja hai na vo apne link me add ho jayega jo ham normally query params me krte the na vese hi to get that particular value
+            //isiliye yha comma lga ke use kiya hai
             params:{
                 id:1,
             },
