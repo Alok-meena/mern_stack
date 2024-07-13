@@ -8,6 +8,7 @@ const apikey="471e8972";
 // app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//means while / api called load the webpage here
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname, "index2.html"));
 })
@@ -16,7 +17,11 @@ app.get("/",(req,res)=>{
 
 //so search ko click krne pe ye search vali api call ho rhi hai
 app.get("/search",async (req,res)=>{
-    const name=req.query.query;//because html me delhi hmne search?query hi diya hai
+
+    //to suno suno jab query params me ham niche likhte the to uper link apne ap update hota tha
+    //like this ki search?name==alok | id=2 ese to yha jese name hai 
+    //hmne query diya to bs use hi uthaya hai
+    const name=req.query.query;//because html me dekho hmne search?query hi diya hai
     const response=await axios.get("http://www.omdbapi.com/",{ //omd is open movie database
         params:{
             apikey:apikey,
