@@ -57,7 +57,8 @@ app.get("/",(req,res)=>{
 //after this our form will open at the server
 
 app.post("/submit",(req,res)=>{
-    const name=req.body.name;
+    const name=req.body.name;//to yha jo ye .name hai ye vhi name hai jo hamne form me input ke name me ander diya hai and vhi hona chahihe bhi
+    //example type email diya hai to name me bhi name="email" hi hona chahihe
     const phone=req.body.phone;
     
     //to ye console krne se data hme terminal me show hoga
