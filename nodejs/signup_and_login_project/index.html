@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup page</title>
+    <style>
+        body{
+            text-align: center;
+            margin: 50px;    
+            background-color: seashell;      
+            overflow: hidden;  
+        }
+        #container{
+            border: 2px solid black;
+            background-color: #f9f9f9;
+            text-align: left;
+            margin: 4px auto;
+            justify-content: center;
+            padding: 40px;
+            border-radius: 10px;
+            width: 300px;
+        }
+        button{
+            background-color:blue;
+            border: none;
+            border-radius: 3px;
+            font-size:19px;
+            color: white;
+            cursor: pointer;
+            width:100%;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        input{
+            border-radius: 4px;
+            margin:5px;
+            padding: 4px;
+            width: 100%;
+            box-sizing: border-box; 
+        }
+        label{
+            margin:4px auto;
+            padding: 10px;
+            font-weight: bold;
+        }
+        button:hover{
+            background-color: red;
+        }
+        #loginn{
+            color: blue;
+            background-color: white;
+            font-size:medium;
+
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>Signup</h1>
+    <form action="/api/auth/signup" method="post">
+        <div id="container">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username" required>
+            <br><br><br>
+            <label for="password">Password: <i</label>
+            <input type="password" name="password"  id="password" placeholder="Enter your password" required>
+            <br><br><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email"placeholder="Enter your Email" required>
+            <br><br><br>
+            <label for="phone" >Phone:</label>
+            <input type="tel" name="phone" placeholder="Enter your Phone Number" required>
+            <br><br><br>
+            <button type="submit">Signup</button>
+            <button type="button" id="loginn" onclick="loginNow()">Already have an account? Login here</button>
+        </div>
+        <script>
+            function loginNow(){
+                window.location.href = "/login";
+            }
+        </script>
+    </form>
+</body>
+</html>
