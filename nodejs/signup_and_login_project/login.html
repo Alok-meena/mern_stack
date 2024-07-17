@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN page</title>
     <style>
-        body{
+        body {
             text-align: center;
             margin: 100px;    
             background-color: seashell;        
         }
-        #container{
+        #container {
             border: 2px solid black;
             background-color: #f9f9f9;
             text-align: left;
@@ -20,61 +22,65 @@
             border-radius: 10px;
             width: 300px;
         }
-        button{
-            background-color:blue;
+        button {
+            background-color: blue;
             border: none;
             border-radius: 3px;
-            font-size:19px;
+            font-size: 19px;
             color: white;
             cursor: pointer;
-            width:100%;
-            overflow: hidden;
+            width: 100%;
             margin-top: 20px;
         }
-        input{
+        input {
             border-radius: 4px;
-            margin:5px;
+            margin: 5px;
             padding: 4px;
             width: 100%;
             box-sizing: border-box; 
         }
-        label{
-            margin:4px auto;
+        label {
+            margin: 4px auto;
             padding: 10px;
             font-weight: bold;
         }
-        button:hover{
+        button:hover {
             background-color: red;
         }
-        #loginn{
+        #update, #signupp {
             color: blue;
             background-color: white;
-            font-size:medium;
-
+            font-size: medium;
         }
-        
-
-
     </style>
 </head>
 <body>
-    <h1>LOGIN </h1>
-    <form action="/api/auth/login" method="post">
-           <div id="container">
+    <h1>LOGIN</h1>
+    <form id="loginForm" action="/api/auth/login" method="post">
+        <div id="container">
             <label for="username">Username:</label>
-            <input type="text" name="username" id="username" placeholder="Enter your username">
-            <br><br><br>
+            <input type="text" name="username" id="username" placeholder="Enter your username" required>
+            <br><br>
             <label for="password">Password:</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password">
-            <br><br><br>
-            <button type="submit">Login</button>
-            <button type="button" id="loginn" onclick="signupNow()">Don't have an account? Signup here</button>
-            <!-- so here at last give button type only to move between the pages-->
-           </div>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            <br><br>
+            <button type="submit" onclick="logSubmit()">Login</button>
+            <button type="button" id="signupp" onclick="signupNow()">Don't have an account? Signup here</button>
+            <button type="button" id="update" onclick="updateNow()">Update your Account? Update here</button>
+             <!-- so here at last give button type only to move between the pages-->
+        </div>
     </form>
+    
     <script>
-        function signupNow(){
-            window.location.href = "/signup";//ise call isliye kiya because starting me
+        function signupNow() {
+            window.location.href = "/signup";
+        }
+
+        function updateNow() {
+            window.location.href = "/update";
+        }
+
+        //ise call isliye kiya because starting me
             //apna get api webpage ko server pe run kr rhi hai
             //and then submit krte hi baki ki post api's run ho rhi hai
 
@@ -83,11 +89,11 @@
             //      Display the href (URL) of the current page:
 
                 // document.getElementById("demo").innerHTML =
-                // "Page location is " + window.location.href; example if page location is http://localhost:3000+/signup
-        }
+                // "Page location is " + window.location.href; example if page location is http://localhost:3000+/signuup
     </script>
 </body>
 </html>
+
 
 
 
