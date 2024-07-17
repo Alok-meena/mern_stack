@@ -53,6 +53,11 @@
             font-size:medium;
 
         }
+        #update{
+            color: blue;
+            background-color: white;
+            font-size: medium;
+        }
         
 
 
@@ -76,10 +81,14 @@
             <br><br><br>
             <button type="submit">Signup</button>
             <button type="button" id="loginn" onclick="loginNow()">Already have an account? Login here</button>
+            <button type="button" id="update" onclick="updateNow()">Update your Account ? Update here</button>
         </div>
         <script>
             function loginNow(){
                 window.location.href = "/login";
+            }
+            function updateNow(){
+                window.location.href="/update";
             }
         </script>
     </form>
