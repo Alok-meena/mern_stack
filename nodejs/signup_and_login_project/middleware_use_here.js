@@ -100,3 +100,25 @@ This setup ensures that only authenticated users can access certain routes by ve
 
 
 
+
+
+
+
+
+
+
+
+Middleware is not only for protecting APIs. It can be used for a variety of tasks including logging, error handling, request parsing, and more.
+Middleware functions can be applied globally (for all routes) or to specific routes as needed.
+Using middleware helps keep your application logic organized and modular.
+
+
+
+
+
+
+
+
+
+
+
