@@ -24,7 +24,7 @@ const readJsonFile=(filepath)=>{
     //string fomat me tha to fir se parse kr diya hai to convert to json format again
 }
 
-//api to register
+//middleware
 
 const authMiddleware=(req,res,next)=>{
     const token=req.headers["authorization"];//to ye bs headers ka sara part utha lega 
@@ -45,6 +45,8 @@ const authMiddleware=(req,res,next)=>{
     }
 }
 
+//api to register
+
 app.post("/api/auth/register", async (req,res)=>{
     const { username,password }=req.body;
     // const users=[];
@@ -56,7 +58,8 @@ app.post("/api/auth/register", async (req,res)=>{
     }
 
     const hashedPassword=await bcrypt.hash(password,10);//to 2 power 10 time encrypt krega
-    //so hashing is used to save data
+    //so hashing is used to save data/to ye 2 power 10 times data ko reiterate krke new hash bnayega
+    //to isme khuch time lgega as jitna bda no. doge like hmne 10 diya so time so await is used
 
     users.push({username,password:hashedPassword});//to ye apna jo password hai use BCRYPT alag hi format me hash krke dedega
     //ager username diff hai aor password same to bhi bcrypt dono ko alag format me krega
@@ -67,6 +70,7 @@ app.post("/api/auth/register", async (req,res)=>{
     res.status(200).json({message:"user registered sucessfully"});
 })
 
+//login api
 app.post("/api/auth/login", async (req,res)=>{
     const { username,password }=req.body;
     const users=readJsonFile(userfilePath);
@@ -81,6 +85,8 @@ app.post("/api/auth/login", async (req,res)=>{
     }
 
   // Create a JWT token
+    //to ham har ek api call me ek jwt token bhejte hai login hone ke bad
+    //to identify ki koi bhi activity ager ek user kr rha to use identify krne ke liye
     const token=jwt.sign({username},secret_key,{expiresIn:"1h"});
     res.json({token});//it will return the token 
     //when we decode it on site it will give the details stored in it
