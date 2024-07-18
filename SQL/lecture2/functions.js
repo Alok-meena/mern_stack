@@ -23,7 +23,9 @@ const createOrder=async (user_id,product_id,quantity)=>{//and date is default ji
 
 //function to get data to ager sql me krte to select * from products where id=1; ese krte
 const getUserById=async (id)=>{
-    return await User.findAll(id);
+    return await User.findByPk(id);//yha id ke basis pe search kr rhe hai to jo ki hamne
+    //primarykey rkhi hai so find by this method only
+
     //can use findOne(id) to get only one user with that id
     //can use findByPk by primary key used for INDEXING 
 }
@@ -44,52 +46,86 @@ const getAllOrders=async ()=>{
     return await Order.findAll({
         include:[
             {model:User,attributes:["name","email"]},
-            {
-                model:Product,
-                attributes:["name","price"],
-            },
+            {model:Product,attributes:["name","price"]},
         ],
     });
     console.log(data);
 };
 
-const getOrderDetails=async ()=>{
-    return await Order.findOne({
+const getOrderDetails=async (order_id)=>{
+    return await Order.findOne({//to findone ke sath where condition use hoti hai 
         where: { id:order_id},
+        include: [
+            //aor sath me hamne model ke user and product ko bhi get kr liya hai
+            { model: User, attributes: ["name", "email"] },
+            { model: Product, attributes: ["name", "price"] },
+        ],
     });
 };
 
 //there are two ways to update the data
 
 //way1
-const updateProduct=async (id,name,description,price)=>{
+
+// const updateProduct=async (id,name,description,price)=>{
     //so is id ke koi ek value search krke update kr di uski details
     //it is similar to limit what we have done in sql
 
     //finding if extis or not
-    const product=await Product.findOne({
-        where:{
-            id:id,
-        },
-    })
+//     const product=await Product.findOne({
+//         where:{
+//             id:id,
+//         },
+//     })
 
-    if(product){ //if exits update the data 
-        product.name=name;
-        product.description=description;
-        product.price=price;
-        console.log(product);
-        product.save();//it will save the updated values
-    }
-    return product;
-}
+//     if(product){ //if exits update the data 
+//         product.name=name;
+//         product.description=description;
+//         product.price=price;
+//         console.log(product);
+//         product.save();//it will save the updated values
+//     }
+//     return product;
+// }
 
-//way2
-const updateUser=async (id,updates)=>{//updates me sari update value bhej do jo update karna hai is id ko
-    const product=await Product.findByPk(id);
-    if(product){
-        return await Product.update(updates);//if product exits then only update 
+//way 2
+// const updateProduct = async (id, updates) => {
+//     const product = await Product.findByPk(id);
+//     if (product) {
+//       return await product.update(updates);
+//     }
+//     throw new Error("Product not found");
+//   };
+
+const updateProduct = async (id, updates) => {
+    const [affectedRows] = await Product.update(updates, {
+        where: { id }
+    });
+    if (affectedRows === 0) {
+        throw new Error("Product not found");
     }
-}
+    return await Product.findByPk(id); // Return the updated product
+};
+
+// const updateUser=async (id,updates)=>{//updates me sari update value bhej do jo update karna hai is id ko
+//     const user=await User.findByPk(id);
+//     if(user){
+//         return await User.update(updates);//if product exits then only update 
+//     }
+//     throw new Error("User not found");
+// };
+
+const updateUser = async (id, updates) => {
+    const [affectedRows] = await User.update(updates, {
+        where: { id }
+    });
+    if (affectedRows === 0) {
+        throw new Error("User not found");
+    }
+    return await User.findByPk(id); // Return the updated user
+};
+
+
 
   
 
@@ -103,4 +139,6 @@ module.exports={
     getAllProducts,
     getAllOrders,
     getOrderDetails,
+    updateProduct,
+    updateUser,
 };
