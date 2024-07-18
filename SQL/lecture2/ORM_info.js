@@ -1,4 +1,11 @@
+
+
+
+IT CONTAINS BOTH LECTURE 2 AND 3 OF SQL
+
+
 ORM stands for Object-Relational Mapping. It is a programming technique used to convert data between incompatible type systems in object-oriented programming languages. In the context of a relational database, an ORM allows developers to interact with the database using the object-oriented paradigm of their programming language rather than writing raw SQL queries.
+  
 
 Key Features of ORM
 Mapping: ORMs map database tables to classes and table rows to objects. Each class attribute corresponds to a column in the database table.
