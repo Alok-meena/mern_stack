@@ -1,3 +1,10 @@
+The WebSocket API is an advanced technology that makes it possible to open a two-way interactive
+communication session between the user's browser and a server.
+With this API, you can send messages to a server and receive event-driven responses without 
+having to poll the server for a reply.
+
+
+
 API Interaction with Server (One-Way Communication)
 APIs (Application Programming Interfaces) typically follow a request-response model, meaning that communication is initiated by the client. Here's how it works:
 
