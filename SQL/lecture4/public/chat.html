@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Chat Room</h1>
+    <div id="messages"></div>
+    <form id="messageform">
+        <input type="text" id="message" placeholder="Type a message" required>
+        <button type="submit">Send</button>
+    </form>
+    <!-- to backend me socket.io libraray ko include krne ke liye hamne npm install socket.io kiya tha
+     aor frontend me if we do like this in script then it will be installed and use this 
+     way only to install other libraries in frontend-->
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js "></script>
+</body>
+</html>
+
+
+
+<!-- Yes, that's correct. Including Socket.IO in both the frontend and backend is necessary for establishing real-time, bi-directional communication between the client and server.-->
