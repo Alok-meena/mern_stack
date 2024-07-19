@@ -95,3 +95,12 @@ socket.onerror = error => {
 Summary
 API (One-Way Communication): The client sends a request to the server, and the server responds. The server cannot send data to the client unless the client initiates a request.
 WebSocket (Two-Way Communication): Both the client and server can send and receive messages at any time over a persistent connection, allowing for real-time, bi-directional communication.
+
+
+
+WE WILL USE SOCKET.IO LIBRARAY IN NODEJS TO USE IT using npm install socket.io
+
+
+No, socket.io is not an inbuilt Node.js library. It is a third-party library that you can install via npm (Node Package Manager). 
+    socket.io enables real-time, bidirectional, and event-based communication between the client and the server, which is particularly useful
+    for applications that require real-time updates such as chat applications, live notifications, and online games.
