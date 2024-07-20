@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -6,26 +6,139 @@ body{
     justify-content: center;
     height: 100vh;
     margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(a.jpg);
 }
 
-h1{
+a {
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+}
+
+#loginn, #signupp {
+    border: 2px solid black;
+    padding: 6px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#we {
+    color: white;
+    font-family: Tahoma, sans-serif;
+    padding: 20px;
+}
+
+#welcome, #container {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
     margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blue;
+    font-size: 50px;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
+    width: 400px;
 }
 
-input,button{
+input, button {
     margin: 5px 0;
+    border: 2px solid black;
+    width: 100%;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 10px;
 }
 
-#messages{
-    border: 1px solid #ccc;
+input {
+    background-color: black;
+    color: white;
+}
+
+button {
+    background-color: blue;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+    font-weight: 100;
+    font-size: medium;
+}
+
+button:hover {
+    background-color: red;
+    cursor: pointer;
+    color: blue;
+}
+
+#messages {
+    border: 2px solid rgba(0, 0, 0, 0.3);
     padding: 10px;
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     height: 300px;
     overflow-y: scroll;
     margin-bottom: 10px;
+    color: darkblue;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background: #6a82fb;
+}
+
+.message.received {
+    align-self: flex-start;
+    background: #da085c;
+}
+
+#messages::-webkit-scrollbar {
+    width: 10px;
+}
+
+#messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#messages {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.7) rgba(255, 255, 255, 0.2);
 }
