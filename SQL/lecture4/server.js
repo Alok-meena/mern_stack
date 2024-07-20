@@ -25,6 +25,10 @@ app.use(express.json());
 //Static files are assets that are sent to the client's browser without any modification or processing on the server side. These files are typically used for the frontend of a web application and 
 //jaise ham html page ko direct run kr rhe hai sever pe without processing it
 //so these types of fils are static files
+
+
+//to sabhi files ko like index.html inko run krne ke liye ham sendfile krte the 
+//but yha pe 2nd method use kiya hai sab khcuh public me dal ke automatically run kiya hai
 app.use(express.static("public"));
 app.use("/auth",authRoutes);
 
