@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded",function(){
     const loginform=document.getElementById("loginform");
     const messageform=document.getElementById("messageform");
     const messagesDiv=document.getElementById("messages");
+    
+    //ye use kr rhe hai taki pta rhe konsa user text kr rha hai
+    //and accordingly align kr ske
+    let currentUser = localStorage.getItem("Username");
+
 
     if(signupform){
         //as we click submit this code will execute
@@ -36,11 +41,11 @@ document.addEventListener("DOMContentLoaded",function(){
                 }
                 else{
                     const error=await response.json();
-                    alert("Sign up Failed");
+                    alert("Sign up Failed:"+error.error);
                 }
             }
             catch(error){
-                alert("Sign up Failed:",error);
+                alert("Sign up Failed:"+error.message);
             }
         })
     }
@@ -65,6 +70,8 @@ document.addEventListener("DOMContentLoaded",function(){
                     const data=await response.json();//convert
                     //to hame data me data milega aor usme se ham token ko access krke localstorage me store kr rhe hai
                     localStorage.setItem("token",data.token);//so response me jo token milega use ham localstorage me store kr lenge
+                    localStorage.setItem("Username",username);
+                    currentUser=username;
                     window.location.href="chat.html";
                 }
                 else{
@@ -95,8 +102,17 @@ document.addEventListener("DOMContentLoaded",function(){
             //so we have to add that message in our browser we do in div
 
             const messageElement=document.createElement("div");
-            messageElement.textContent=`${message.user}: ${message.text}`;
+            if (message.user === currentUser) {
+                messageElement.textContent = `You: ${message.text}`;
+                messageElement.classList.add("message", "sent");
+            } 
+            else {
+                messageElement.textContent = `${message.user}: ${message.text}`;
+                messageElement.classList.add("message", "received");
+            }
+              
             messagesDiv.appendChild(messageElement);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
         });
 
         //chatbox message --> backend (toekn verify , user name, user text) ---> chatbox   USER TEXT MEANS WHICH USER SEND'S THIS MESSAGE
@@ -107,6 +123,8 @@ document.addEventListener("DOMContentLoaded",function(){
             const messageInput=document.getElementById("message");
             socket.emit("message",messageInput.value);//emit() to send a message to all the connected clients
             messageInput.value="";//means ek bar message send  kr diya to fir type box ko empty kr do 
+
+            messagesDiv.scrollTop=messagesDiv.scrollHeight;
         })
     }
 
