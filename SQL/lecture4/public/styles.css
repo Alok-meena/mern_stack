@@ -54,10 +54,10 @@ form {
     width: 400px;
 }
 
-input, button {
+input{
     margin: 5px 0;
     border: 2px solid black;
-    width: 100%;
+    width:400px;
     font-size: large;
     font-weight: bold;
     border-radius: 4px;
@@ -72,6 +72,13 @@ input {
 button {
     background-color: blue;
     color: white;
+    margin: 5px 0;
+    border: 2px solid black;
+    width:423px;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 10px;
 }
 
 ::placeholder {
