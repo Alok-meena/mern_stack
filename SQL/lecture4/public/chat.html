@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Chat Room</h1>
+    <div id="container">
+        <h1>Chat Room</h1>
     <div id="messages"></div>
     <form id="messageform">
-        <input type="text" id="message" placeholder="Type a message" required>
+        <input type="text" id="message" placeholder="Type a message...." required>
         <button type="submit">Send</button>
     </form>
+    </div>
     <!-- to backend me socket.io libraray ko include krne ke liye hamne npm install socket.io kiya tha
      aor frontend me if we do like this in script then it will be installed and use this 
      way only to install other libraries in frontend-->
