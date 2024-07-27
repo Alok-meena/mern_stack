@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="formdiv">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required /><br />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required /><br />
+            <button type="submit">Login</button>
+        </form>
+    </div>
+ <script>
+      document.getElementById("login-form").addEventListener("submit", function (e) {
+
+          e.preventDefault();//so that default functions doesn't work like page reload na ho
+          fetch("/api/users/login", {
+            method: "POST",
+            headers: { "content-Type": "application/json" },
+            body: JSON.stringify({
+              email: document.getElementById("email").value,
+              password: document.getElementById("password").value,
+            }),
+          })
+            .then((response) => response.json()).then((data) => {
+              if (data.token) {
+                localStorage.setItem("token", data.token);
+                alert("Login Successfull")
+                window.location.href = "/";//go to the home page
+              } else {
+                alert("Login Failed");
+              }
+            });
+        });
+    </script>
+  </body>
+</html>
