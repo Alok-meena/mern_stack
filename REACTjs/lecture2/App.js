@@ -95,6 +95,9 @@ handleLogin and handleLogout functions update the state.
 
 useState()
 
+function ImageGallery() {
+  const [index, setIndex] = useState(0);
+    
 State Variable:
 
 isLoggedIn: This is the state variable that holds the current state. Initially, it's set to the value passed to useState, which in this case is false.
@@ -134,3 +137,60 @@ function App(){
 export default App; 
 
 
+
+Context Hooks 
+
+function Button() {
+  const theme = useContext(ThemeContext);
+    
+
+Context lets a component receive information from distant parents without passing it as props.
+For example, your app’s top-level component can pass the current UI theme to all components below, no matter how deep.
+
+
+Effect Hooks 
+
+function ChatRoom({ roomId }) {
+  useEffect(() => {
+    const connection = createConnection(roomId);
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]);
+    
+
+Effects let a component connect to and synchronize with external systems. 
+This includes dealing with network, browser DOM, animations, widgets written using a different UI library, and other non-React code.
+
+useEffect connects a component to an external system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
