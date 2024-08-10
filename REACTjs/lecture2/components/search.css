@@ -1,0 +1,39 @@
+/* search.css */
+
+.App {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+input {
+    padding: 10px;
+    margin: 20px 0;
+    border: 2px solid blue;
+    border-radius: 5px;
+    width: 50%;
+    font-size: 16px;
+    background-color: yellow;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1{
+    color:red;
+    border: none;
+}
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+li:hover {
+    background-color:red;
+    cursor: pointer;
+}
+
