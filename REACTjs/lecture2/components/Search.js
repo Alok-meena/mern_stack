@@ -40,6 +40,7 @@ const Search= () =>{
             <ul>
                 {filteredItems.map((item)=>(
                     <li key={item}>{item}</li>
+                                   
                 ))}
             </ul>
 
@@ -115,3 +116,6 @@ The key should be unique among siblings to ensure the list renders correctly. In
 {item}:
 Inside the curly braces, you're injecting the value of item (the current element from filteredItems) into the list item. This is what will be displayed as the content of each <li> element.
 
+
+
+WHEN TO USE 
