@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./search.css"
 
 const items=["Apple","Mango","Banana","Orange","Grapes","PineApple"];
 
