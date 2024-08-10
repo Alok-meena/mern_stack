@@ -3,6 +3,7 @@ import React from "react";
 function Greetings(props){
     //DEKHO AGER HTML ME JS USE KARNA HAI TO {} KE ANDER HI USE KR SKTE HAI
     return <h1>HELLO {props.name}</h1>; 
+    //to props ek jsx fun hai to {} me likha hai isko
 }
 
 function App(){
@@ -28,6 +29,7 @@ function Greetings(props){
     return (
         <div>
           {isLoggedin ? <h1>Welcome Back</h1> : <h1>Please Log In</h1>}
+          //js ko {} me hi likhte hai
         </div>
         // If isLoggedin is true, the expression after the ? is returned: <h1>Welcome Back</h1>
         // If isLoggedin is false, the expression after the : is returned: <h1>Please Log In</h1>
@@ -58,8 +60,29 @@ function App(){
         //yha niche greetings me hamne function pass kiya hai
         <div className="App">
             <Greetings isLoggedin={isLoggedin}/>
+       // Use curly braces {} when you need to pass anything other than a string literal as a prop value, such as variables,
+        //numbers, booleans, objects, functions, or even complex expressions like {count > 0}.
+
+
+
+
+
+
+
+        
+            //to yha bs isloggedin variable ko pass kiya hai aor khuch nhi 
+           //for example we can also do like this
+            //            <Greetings isloggedin={isloggedin} name={name}/>
+        //and then in greetings function         
+        //{isloggedin?<h1>Your are logged in Mr {props.name}</h1>:<h1>Your are logged out</h1>}
+
+
+
+        
       // to ager isloggedin true hai to click krte hi handlelogout yani false kr do aor 
       //vese hi name bhi change krke logout kr do button ager true hai to
+
+           //to bas button click krne pe value change ho rhi hai button name kica
             <button onClick={isLoggedin? handleLogout: handleLogin}>
                 {isLoggedin ? "Logout":"Login"};
             </button>
@@ -162,35 +185,3 @@ Effects let a component connect to and synchronize with external systems.
 This includes dealing with network, browser DOM, animations, widgets written using a different UI library, and other non-React code.
 
 useEffect connects a component to an external system.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
