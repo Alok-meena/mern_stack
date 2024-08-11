@@ -41,6 +41,8 @@ const Search= () =>{
             />
 
             <ul>
+        //to map fun bas har ek item ko access krke jo filtereditems me hai 
+        //li ke ander dal dega bas at last hame isko return karna hai more info in copy
                 {filteredItems.map((item)=>(
                     <li key={item}>{item}</li> //yha pe () use kiya hai call back ke bad
                     //to hamne return use nhi kiya hai o/w in jsx use return whenever used
