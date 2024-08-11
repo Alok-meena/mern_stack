@@ -11,7 +11,10 @@ const Search= () =>{
 
     useEffect(() => {
         setFilteredItems(
-            
+            //mtlb ki items me ager query hai present jha bhi use filter krke lao aor
+            //setfilitems fun use filitems me dal dega
+
+            //here we can skip {} as it is a single line expression
             items.filter((item)=>item.toLowerCase().includes(query.toLowerCase()))
             //SO VERY IMP
             //yha kya ho rha hai filter basically sbhi items ke elements ko iterate krega
@@ -39,7 +42,9 @@ const Search= () =>{
 
             <ul>
                 {filteredItems.map((item)=>(
-                    <li key={item}>{item}</li>
+                    <li key={item}>{item}</li> //yha pe () use kiya hai call back ke bad
+                    //to hamne return use nhi kiya hai o/w in jsx use return whenever used
+                                //{} in callback functions
                                    
                 ))}
             </ul>
