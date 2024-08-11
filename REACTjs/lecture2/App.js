@@ -16,7 +16,44 @@ function App(){
 
 export default App;
 
-this is how to use props in react to pass a data from parent to child component 
+this is how to use props in react to pass a data from parent to child component
+
+2). how to send data from child to parent , just pass a callback function from child to parent
+
+import React, { useState } from "react"
+
+//yha pe flow of execution alag hai dekho pahle return pe jayenge and then cick kiya button to fir handlebbuttonwork pe senddata vala fun me data jayega
+//sidha sendatatoparent pe jha child ko call kiya hai hai then vha se handlparentdata pe data pahuch jayega ookk
+const Child=({sendDataToParent})=>{
+    const handleButtonWork=()=>{
+        const data=" HELLO FROM CHILD SIDE";
+        sendDataToParent(data);
+    }
+
+    return(
+        <div>
+            <button onClick={handleButtonWork}>Send Data to parent</button>
+        </div>
+    )
+}
+function App(){
+
+    const [parentData,setParentData]=useState("");
+
+    const handleparentdata=(data)=>{
+        setParentData(data);
+    };
+
+    return(
+        <div className="App">
+            <h1>Parent</h1>
+            <p>Data from Children {parentData}</p>
+            <Child sendDataToParent={handleparentdata}/>
+        </div>
+    )
+}
+
+export default App
 
 
 STATE HOOK IN REACT :-----------
