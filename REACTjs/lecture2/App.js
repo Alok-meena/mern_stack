@@ -28,6 +28,7 @@ function Greetings(props){
     const isLoggedin=props.isLoggedin;
     return (
         <div>
+          //it is known as conditional rendering means condition ke basis pe changes ho rhe hai
           {isLoggedin ? <h1>Welcome Back</h1> : <h1>Please Log In</h1>}
           //js ko {} me hi likhte hai
         </div>
