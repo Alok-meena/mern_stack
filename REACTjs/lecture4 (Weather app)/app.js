@@ -1,4 +1,4 @@
-
+//https://openweathermap.org/ for weather app this is used to get the api key and to call the weather api we require a api key
 
 
 import React, { useState } from "react"
