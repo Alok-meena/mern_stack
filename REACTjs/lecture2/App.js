@@ -24,7 +24,14 @@ import React, { useState } from "react"
 
 //yha pe flow of execution alag hai dekho pahle return pe jayenge and then cick kiya button to fir handlebbuttonwork pe senddata vala fun me data jayega
 //sidha sendatatoparent pe jha child ko call kiya hai hai then vha se handlparentdata pe data pahuch jayega ookk
+
+VERY VERY IMP
+
+//Destructuring of Props in ReactJS is used to extract specific values from the props object passed down to a component, allowing us to use those values as standalone variables in the component. 
 const Child=({sendDataToParent})=>{
+    // const sendDataToParent=props.sendDataToParent;
+    //to ye uper jo directly FUNCTION ko destructure kiya hai vo same hai jaise ye uper props
+    //ko use krke krte hai bs directly kr liya to kese bhi kr skte ho
     const handleButtonWork=()=>{
         const data=" HELLO FROM CHILD SIDE";
         sendDataToParent(data);
@@ -47,6 +54,8 @@ function App(){
     return(
         <div className="App">
             <h1>Parent</h1>
+          //to jo data ham children se bhej rhe hai vo parentdata me store kr rhe hai
+        //isiliye iski value show kr rhe hai
             <p>Data from Children {parentData}</p>
             <Child sendDataToParent={handleparentdata}/>
         </div>
