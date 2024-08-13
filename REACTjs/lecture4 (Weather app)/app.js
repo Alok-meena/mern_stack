@@ -14,6 +14,7 @@ const App = () =>{
     const [city, setCity] = useState("");
     const [weather , setWeather] = useState("");
 
+    //yha pe hamne async await use kiya hai as we are calling api and data aane me time lgega that's why we used async await okk
     const getWeather = async (cityname) =>{
         try{
             const response = await axios.get(
