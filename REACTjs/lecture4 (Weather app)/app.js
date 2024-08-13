@@ -46,3 +46,18 @@ const App = () =>{
 }
 
 export default App;
+
+//can copy the code from the react bootstrap site after doing import 
+//NOW TO USE REACT BOOTSTRAP INSTALL 2 THINGS
+//npm install bootstrap react-bootstrap
+//and index.js me ye import kiya hai / app.js me bhi kr skte the import 'bootstrap/dist/css/bootstrap.min.css';
+//jb npm install kiya to bs un node modules me se css ko import kiya hai
+
+//Bootstrap relies on jQuery for its JavaScript components, which can be unnecessary overhead in a React project. 
+//React-Bootstrap eliminates the need for jQuery, aligning with modern JavaScript practices and ensuring a lighter, more efficient application.
+
+
+//WHAT IS BOOTSTRAP
+///Bootstrap is a free, open source front-end development framework for the creation of websites and web apps. Designed to enable responsive development of mobile-first websites, Bootstrap provides a collection of syntax for template designs.
+
+//you can ALSO PICK UP REACT TEMPLATES WHICH ARE ALREADY READY
