@@ -11,6 +11,11 @@ let p = 'Nirbhay'
 
 let str= `Hi i am ${p}`
 
+//to \ (backslash) ham single and double quotes dono me use kr skte hai so that our text will be printed in the same
+// line but ham jo type krenge vo apni screen me hi rhega okk
+
+//and use backtick when we want to print the text in next line also here no need of slash
+//just do press enter okk
 let longStr='this is \
 a very long\
 string'
@@ -21,6 +26,36 @@ console.log(s.length)
 console.log(s.indexOf(key))
 console.log(s.indexOf('is'))
 console.log(s.indexOf('is',3))
+
+
+STRINGS ARE IMMUATABLE means cant be changed 
+but array are mutable like shift unshfit push pop splice slice sort etc will return 
+a new modified array okk vvvvvvvvvviiiiiiiiiiimmmmmmmmmmppppppppp
+
+
+how to check no. of words in the string:--
+
+let a=" hi guys welcome";
+// console.log(a);
+// console.log(a.trim());
+// console.log(a);
+console.log(a.trim().split(" ").length); //trim will remove the space from starting and ending
+//and split will split the string into individual array elements after space 
+// we did trim here itself as trim returns a new modified string because strings are immutable 
+//so we did both here to calculate the lenght of the string okk
+
+another thing
+
+let a=" hi guys welcome";
+
+console.log(a.trim().split("e"));
+
+Output:
+
+[ 'hi guys w', 'lcom', '' ]
+
+
+
 
 
 
@@ -83,7 +118,7 @@ let x = outer("param1");
 //tpye of x= function
 // x = innter
 
-// works as line 14, line 18, line 5
+// works as let x vali then x call hui then console vali inside inner function line
 
 x('param2');
 
@@ -145,6 +180,9 @@ x('param2');
 
 // if function is directly called, global scope, points window
 
+//to apne this keyword koo jha pe bhi call kroge vha ye point krega normally window me call kiya
+//to window ko point krta hai o/w object me kiya to object ko krta hai point
+
 function checkThis(){
     console.log(this)//to vs code me use kiya to window me function ko call kiya hoga to
    // window ko hi point krega jha ise run kiya
@@ -176,7 +214,7 @@ let fun = ()=>{
 
 // never use proto in code
 
-// let x = "10"
+// let x = "10" it is 3 level above null because 3 bar proto use krne ke bad NULL aya hai apna
 // undefined
 // x.__pr
 // undefined
@@ -203,6 +241,10 @@ let fun = ()=>{
 
 //All JavaScript objects inherit properties and methods from a prototype.
 
+console.log(String.prototype.__proto__ === Object.prototype);  // true
+console.log(Number.prototype.__proto__ === Object.prototype);  // true
+console.log(Array.prototype.__proto__ === Object.prototype);   // true
+
 
 
 let obj1={
@@ -215,4 +257,6 @@ let obj2={
     profession:"student"
 }
 
-obj1.__proto__=obj2;
+obj1.__proto__=obj2; //khuch nhi ab dono ka prototype means jha se function inherit kiye hai 
+//use hamne same kr diya /equal to ab ham obj1 se bhi lastname ko access kr skte hai 
+//obj1.lastname okk pahle nhi kr skte the but now we can
