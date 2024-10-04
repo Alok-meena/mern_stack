@@ -39,8 +39,9 @@ DOM MANIPULATION (DOCUMENT OBJECT MODEL) IN JS
             console.log("dont delete it");
         }
 
-        prompt("what is your name ? GUEST");
-        console.log(prompt);
+         //this is how to get the value
+        let a=prompt("what is your name? GUEST");
+        console.log(a);
 
 
 
@@ -131,7 +132,7 @@ and in this way we can also use this like we do in addEventListner
 <body>
     <h1 id="header">header</h1>
      <h2 class="democlass">This contains a class</h2>
-     <button onclick="myfunction()">Add class</button>
+     <button onclick="myfunction()">Add class</button>//it is similar to addEventListener 
 
     <script>
         function myfunction(){
@@ -268,6 +269,9 @@ and in this way we can also use this like we do in addEventListner
   </body>
 </html>
 
+
+
+NOW TALKING ABOUT setattribute() okk
 
 <!DOCTYPE html>
 <html lang="en">
@@ -538,7 +542,7 @@ and in this way we can also use this like we do in addEventListner
         .addEventListener("click", function () {
           var listItems = document.querySelectorAll("#itemList li");//means listitem id ke ander ke sabhi li ko utaho
           var result = "List Items:\n";
-          listItems.forEach(function (item, index) {
+          listItems.forEach(function (item, index) {//means listitem id ke ander ke sabhi li ko utaho
             result += "Item " + (index + 1) + ": " + item.innerText + "\n";
           });
           document.getElementById("result").innerText = result;
@@ -549,10 +553,12 @@ and in this way we can also use this like we do in addEventListner
         .getElementById("replaceItemButton")
         .addEventListener("click", function () {
           var listItems = document.querySelectorAll("#itemList li");
-          if (listItems.length > 1) {
+          if (listItems.length > 1) {//create kiya ek new element ko li tag ke sath okk aor usme ek innertext bhi de diya hamne right
             var newItem = document.createElement("li");
             newItem.innerText = "New Item";
-            listItems[1].replaceWith(newItem);
+            listItems[1].replaceWith(newItem);//The replaceWith() method replaces selected elements with new element
+              //can also replace with text , etc can replace with multiple elements also
+              //  content.replaceWith(newElement1, newElement2);
             alert("Item 2 has been replaced.");
           } else {
             alert("The list does not have enough items to replace.");
