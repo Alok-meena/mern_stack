@@ -547,6 +547,8 @@ function helloSayer(tillcount,name){
 helloSayer(10,"Alok");
 helloSayer(20,"Aman");
 
+//to jaise hi alok print hua then agle alok ke liye 1s ka gap aayega to us 1s ke gap me
+//apna aman print ho gya as next function call ho gya okk
 
 output
 HELLO Alok
@@ -586,6 +588,9 @@ HELLO Aman
 //then alok phir 1 s bad print hoga isi beech aman print ho jayega because js kisi ke liye rukta nhi hai
 
 //isme pahle alok 10 bar print hoga aor ye hone ke bad hi aman print hoga
+
+//to .then() means jab apni promise resolve() hogi tabhi aaage bdo nhi to pahle promise ke 
+//resolve hone ka wait kro that's why if we dont give resolve() then aman will not be printed
 helloSayer(10,"Alok").then(()=>{
     helloSayer(5,"Aman");
 })
@@ -610,17 +615,20 @@ helloSayer(3, "nirbhay")
      .
 this below will do the same thing done by this upper then it waits but it does it in a neater way
 
+is uper vale ka hi neat version ye async await hai 
+
+
 async function task2(){//yha async means isme jo code hai vo time lene vala code hai
     //to phale alok then aman 5 bar print hoga okk
     //to then ki jagah ye use krte hai ham kya await ki ye hoga tabhi aage jana nhi to wait krna
     //and to use await use async at the start
-    await helloSayer(5,"Alok");//await add kiya means iss line ko complete krke hi next line me jayega 
+    await helloSayer(5,"Alok");//await add kiya means iss line ko complete krke hi next line me jayega  same as then okk
     await helloSayer(5,"Aman");
 }
 
 task2();
 
-//and this will print concurrently
+//and this will print concurrently means dono ko ek sath
 function task2(){
     helloSayer(5,"Alok");
     helloSayer(5,"Aman");
@@ -635,7 +643,8 @@ task2();
 // The js Promise. all method is used to wait for all promises to resolve, and then the values are logged. If 
 async function task2(){
     //to primise.all sabhi ko concurrently work krvayega and ager bich me break hua to fir koi bhi run nhi hoga okkk
-    await Promise.all([helloSayer(3,"nirbhay")
+    await Promise.all([
+      helloSayer(3,"nirbhay")
      ,helloSayer(3,"Ayush")
     , helloSayer(3,"Riya")])
 console.log("BATCH ONE DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
@@ -645,6 +654,17 @@ console.log("BATCH ONE DONE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 }
 
 task2()
+
+but if we do like this then sbse pahle apna batch one done print hoga as every statement is taking
+some time so after that everything will be printed concurrently as await is not added there
+
+async function task(){
+    Promise.all([sayhello(5,"Alok"),sayhello(5,"Aman")]);
+    console.log("batch 1 done ............");
+    Promise.all([sayhello(5,"ajay"),sayhello(5,"karan")])
+}
+
+
 
 
 
