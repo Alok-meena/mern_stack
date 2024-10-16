@@ -456,6 +456,8 @@ console.log(arr2); // [1, 2, [10, 4]]
 // Deep copy of an array with nested array
 let arr3 = [1, 2, [3, 4]];
 //becuase jab string me convert kiya to vo primitive type me convert ho gya that's why deep copy hui
+
+//ab yha pe ek nya array create hua hai arr3 ka reference nhi rhega yha pe abb okk
 let arr4 = JSON.parse(JSON.stringify(arr3));
 
 arr4[2][0] = 10;
@@ -617,6 +619,8 @@ this below will do the same thing done by this upper then it waits but it does i
 
 is uper vale ka hi neat version ye async await hai 
 
+    HAM ALWAYS .THEN KI JAGAH PE ASYNC AWAIT USE KRTE HAI OKKK
+means ki then ki tarah hi pahle ye hoga fir hi aage jana okk async operation
 
 async function task2(){//yha async means isme jo code hai vo time lene vala code hai
     //to phale alok then aman 5 bar print hoga okk
